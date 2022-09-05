@@ -1,5 +1,6 @@
 import React from "react";
 import profilePic from "../image/profile-pic.JPG"
+import styled from "styled-components";
 
 const ServicesSection = () => {
     return(
@@ -12,11 +13,22 @@ const ServicesSection = () => {
             <p>
             </p>
             <button>Contact Me</button>
-        <div className="image">
+        <Image>
             <img src={profilePic} alt="Me" />
-        </div>
+        </Image>
     </div>
     )
 }
+
+const Image = styled.div`
+    flex: 1;
+    overflow: hidden;
+    img{
+        width: auto;
+        height: 80vh;
+        object-fit: cover;
+    }
+`;
+
 
 export default ServicesSection;

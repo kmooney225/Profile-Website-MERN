@@ -1,32 +1,62 @@
 import React from "react";
-import profilePic from "../image/profile-pic.JPG"
+import profilePic from "../image/profile-pic.JPG";
+import styled from "styled-components";
 
 const AboutSection = () => {
     return(
-        <div>
-            <div className="description">
+        <About>
+            <Description>
                 <div className="title">
-                    <div className="hide">
+                    <Hide>
                         <h2>Creating. </h2>
-                    </div>
-                    <div className="hide">
+                    </Hide>
+                    <Hide>
                         <h2>Inventing. </h2>
-                    </div>
-                    <div className="hide">
+                    </Hide>
+                    <Hide>
                         <h2>Dreaming. </h2>
-                    </div>
+                    </Hide>
                 </div>
                 <p>Contact me for any music 
                     or website creating services that you need. 
                 </p>
                 <button>Contact Me</button>
-            </div>
-            <div className="image">
+            </Description>
+            <Image>
                 <img src={profilePic} alt="Me" />
-            </div>
-        </div>
+            </Image>
+        </About>
 
     )
 }
+
+const About = styled.div`
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 10rem;
+    color: white;
+`;
+const Description = styled.div`
+    flex: 1;
+    padding-right: 5rem;
+    h2{
+        font-weight: lighter;
+    }
+`;
+
+const Image = styled.div`
+    flex: 1;
+    img{
+        width: auto;
+        height: 80vh;
+        object-fit: cover;
+    }
+`;
+
+const Hide = styled.div`
+    overflow: hidden;
+`
 
 export default AboutSection;
