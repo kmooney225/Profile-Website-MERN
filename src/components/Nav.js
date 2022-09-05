@@ -1,25 +1,58 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
+import { motion } from "framer-motion";
+import {useLocation} from "react-router-dom";
 
 const Nav = () => {
+    const {pathname} = useLocation();
     return(
         <StyledNav>
-            <h1><a id="logo" href="#">Kevin</a></h1>
+            <h1>
+                <Link id="logo" to="#">
+                    Kevin
+                </Link>
+            </h1>
             <ul>
                 <li>
-                    <a href="#">About Me</a>
+                    <Link to="/">About Me</Link>
+                    <Line 
+                        transition={{duration: 0.75 }} 
+                        initial={{ width: "0%" }}
+                        animate={{ width: pathname === '/' ? "50%": "0%" }}
+                    />
                 </li>
                 <li>
-                    <a href="#">Programming Projects</a>
+                    <Link to="/ProgrammingProjects">Programming Projects</Link>
+                    <Line 
+                        transition={{duration: 0.75 }} 
+                        initial={{ width: "0%" }}
+                        animate={{ width: pathname === '/ProgrammingProjects' ? "50%": "0%" }}
+                    />
                 </li>
                 <li>
-                    <a href="#">Music</a>
+                    <Link to="/Music">Music</Link>
+                    <Line 
+                        transition={{duration: 0.75 }} 
+                        initial={{ width: "0%" }}
+                        animate={{ width: pathname === '/Music' ? "50%": "0%" }}
+                    />
                 </li>
                 <li>
-                    <a href="#">Services and Example Websites</a>
+                    <Link to="/Services">Services</Link>
+                    <Line 
+                        transition={{duration: 0.75 }} 
+                        initial={{ width: "0%" }}
+                        animate={{ width: pathname === '/Services' ? "50%": "0%" }}
+                    />
                 </li>
                 <li>
-                    <a href="#">Contact Me</a>
+                    <Link to="/ContactMe">Contact Me</Link>
+                    <Line 
+                        transition={{duration: 0.75 }} 
+                        initial={{ width: "0%" }}
+                        animate={{ width: pathname === '/ContactMe' ? "50%": "0%" }}
+                    />
                 </li>
             </ul>
         </StyledNav>
@@ -51,6 +84,14 @@ const StyledNav = styled.nav`
         padding-left: 10rem;
         position: relative;
     }
+`
+
+const Line = styled(motion.div)`
+    height: 0.3rem;
+    background: #cc0000;
+    position: absolute;
+    bottom: -30%;
+    left: 60%;
 `
 
 export default Nav;
