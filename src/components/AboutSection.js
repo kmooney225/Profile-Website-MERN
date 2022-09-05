@@ -1,7 +1,8 @@
 import React from "react";
 import profilePic from "../image/profile-pic.JPG";
 //import styled from "styled-components";
-import {About, Description, Image, Hide} from "../styles"
+import {About, Description, Image, Hide} from "../styles";
+import Wave from "./Wave";
 
 const AboutSection = () => {
     return(
@@ -26,6 +27,7 @@ const AboutSection = () => {
             <Image>
                 <img src={profilePic} alt="Me" />
             </Image>
+            <Wave />
         </About>
 
     )
