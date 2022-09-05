@@ -16,7 +16,7 @@ const Wave = () => {
                 d="M4 197C344.5 547 747 379 1001.5 197C1205.1 51.4 1470.33 8.33333 1577.5 5" 
                 stroke="silver" 
                 strokeOpacity="0.2"
-                stroke-width="10"
+                strokeWidth="10"
             />  
         </WaveSvg>
     )

@@ -3,22 +3,28 @@ import profilePic from "../image/profile-pic.JPG";
 //import styled from "styled-components";
 import {About, Description, Image, Hide} from "../styles";
 import Wave from "./Wave";
+import { motion } from "framer-motion";
 
 const AboutSection = () => {
+
     return(
         <About>
             <Description>
-                <div className="title">
+                <motion.div>
                     <Hide>
-                        <h2>Creating. </h2>
+                        <motion.h2>
+                            Creating. 
+                        </motion.h2>
                     </Hide>
+                    <motion.h2>
+                            Inventing. 
+                        </motion.h2>
                     <Hide>
-                        <h2>Inventing. </h2>
+                    <motion.h2>
+                           Dreaming. 
+                        </motion.h2>
                     </Hide>
-                    <Hide>
-                        <h2>Dreaming. </h2>
-                    </Hide>
-                </div>
+                </motion.div>
                 <p>Contact me for any music 
                     or website creating services that you need. 
                 </p>
@@ -27,7 +33,7 @@ const AboutSection = () => {
             <Image>
                 <img src={profilePic} alt="Me" />
             </Image>
-            <Wave />
+            <Wave animate={{pathLength: 1, pathOffset: 0}}/>
         </About>
 
     )

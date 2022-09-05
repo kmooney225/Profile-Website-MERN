@@ -5,15 +5,18 @@ import Nav from "./components/Nav";
 import ContactMe from "./pages/ContactMe";
 import Music from "./pages/Music";
 import ProgrammingProjects from "./pages/ProgrammingProjects";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from "framer-motion";
 
 
 function App() {
+  const location = useLocation()
   return (
     <div className="App">
       <GlobalStyle />
       <Nav />
-      <Routes>
+      <AnimatePresence exitBeforeEnter>
+      <Routes location={location} key={location.pathname}>
         <Route 
           path="/" 
           exact
@@ -35,6 +38,7 @@ function App() {
           element={<ContactMe />}
         />
       </Routes>
+      </AnimatePresence>
     </div>
   );
 }

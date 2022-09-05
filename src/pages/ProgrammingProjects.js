@@ -4,10 +4,17 @@ import { Link } from "react-router-dom";
 import musicPlayerPic from '../image/music-player.png';
 import tetrominoPic from '../image/3-d-tetromino.png';
 import xPlorePic from '../image/x-plore.png';
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation"
 
 const ProgrammingProjects = () => {
     return(
-        <Projects>
+        <Projects        
+        exit="exit"
+        variants={pageAnimation}
+        initial="hidden"
+        animate="show"
+        style={{background: "#fff"}}>
             <Example>
                 <h2>Music Player</h2>
                 <div className="line"></div>
@@ -39,8 +46,8 @@ const ProgrammingProjects = () => {
     )
 }
 
-const Projects = styled.div`
-    min-height: 100vh;
+const Projects = styled(motion.div)`
+    minHeight: 100vh;
     overflow: hidden;
     padding: 5rem 10rem;
     h2 {
