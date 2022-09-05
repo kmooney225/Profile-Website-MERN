@@ -24,8 +24,7 @@ const Wave = () => {
 
 const WaveSvg = styled.svg`
     position: absolute;
-    object-fit: cover;
-    left: 0;
+    left: -1rem;
     z-index: 1;
 `
 
