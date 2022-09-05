@@ -5,7 +5,6 @@ import Nav from "./components/Nav";
 import ContactMe from "./pages/ContactMe";
 import Music from "./pages/Music";
 import ProgrammingProjects from "./pages/ProgrammingProjects";
-import Services from "./pages/Services";
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -29,11 +28,6 @@ function App() {
           path="/Music" 
           exact
           element={<Music />}
-        />
-        <Route 
-          path="/Services"
-          exact
-          element={<Services />}
         />
         <Route 
           path="/ContactMe"
