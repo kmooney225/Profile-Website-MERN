@@ -4,6 +4,7 @@ import profilePic from "../image/profile-pic.JPG";
 import {About, Description, Image, Hide} from "../styles";
 import Wave from "./Wave";
 import { motion } from "framer-motion";
+import { titleAnim, fade, photoAnim } from "../animation";
 
 const AboutSection = () => {
 
@@ -12,26 +13,26 @@ const AboutSection = () => {
             <Description>
                 <motion.div>
                     <Hide>
-                        <motion.h2>
+                        <motion.h2 variants={titleAnim}>
                             Creating. 
                         </motion.h2>
                     </Hide>
-                    <motion.h2>
+                    <motion.h2 variants={titleAnim}>
                             Inventing. 
                         </motion.h2>
                     <Hide>
-                    <motion.h2>
+                    <motion.h2 variants={titleAnim}>
                            Dreaming. 
                         </motion.h2>
                     </Hide>
                 </motion.div>
-                <p>Contact me for any music 
+                <motion.p variants={fade}>Contact me for any music 
                     or website creating services that you need. 
-                </p>
-                <button>Contact Me</button>
+                </motion.p>
+                <motion.button variants={fade}>Contact Me</motion.button>
             </Description>
             <Image>
-                <img src={profilePic} alt="Me" />
+                <motion.img variants={photoAnim} src={profilePic} alt="Me" />
             </Image>
             <Wave animate={{pathLength: 1, pathOffset: 0}}/>
         </About>
