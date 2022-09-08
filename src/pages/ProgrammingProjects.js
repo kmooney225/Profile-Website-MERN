@@ -5,7 +5,8 @@ import musicPlayerPic from '../image/music-player.png';
 import tetrominoPic from '../image/3-d-tetromino.png';
 import xPlorePic from '../image/x-plore.png';
 import { motion } from "framer-motion";
-import { pageAnimation } from "../animation"
+import { pageAnimation, fade, photoAnim, lineAnim, frameTrans, frameTransContainer} from "../animation"
+
 
 const ProgrammingProjects = () => {
     return(
@@ -15,13 +16,19 @@ const ProgrammingProjects = () => {
         initial="hidden"
         animate="show"
         style={{background: "#fff"}}>
+            <motion.div variants={frameTransContainer}>
+                <Frame1 variants={frameTrans}></Frame1>
+                <Frame2 variants={frameTrans}></Frame2>
+                <Frame3 variants={frameTrans}></Frame3>
+                <Frame4 variants={frameTrans}></Frame4>
+            </motion.div>
             <Example>
-                <h2>Music Player</h2>
-                <div className="line"></div>
+                <motion.h2 variants={fade}>Music Player</motion.h2>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/">
-                    <div className="container">
+                    <motion.div variants={photoAnim}  className="container">
                     <img src={musicPlayerPic} alt="" />
-                    </div>
+                    </motion.div>
                 </Link>
             </Example>
             <Example>
@@ -48,7 +55,6 @@ const ProgrammingProjects = () => {
 
 const Projects = styled(motion.div)`
     minHeight: 100vh;
-    overflow: hidden;
     padding: 5rem 10rem;
     h2 {
         padding: 1rem 0rem;
@@ -60,7 +66,7 @@ const Example = styled.div`
     padding-bottom: 10rem;
     .line{
         height: 0.5rem;
-        background: #cccccc;
+        background: #cc0000;
         margin-bottom: 3rem;
     }
     .container{
@@ -76,5 +82,29 @@ const Example = styled.div`
         border-radius: 10px;
     }
 `
+
+const Frame1 = styled(motion.div)`
+    position: fixed;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 100vh;
+    background: #fffebf;
+    z-index: 2;
+`
+
+const Frame2 = styled(Frame1)`
+    background: #ff83fb;
+`
+
+const Frame3 = styled(Frame1)`
+    background: #8ed2ff;
+`
+
+const Frame4 = styled(Frame1)`
+    background: #8effa0;
+`
+
+
 
 export default ProgrammingProjects;
