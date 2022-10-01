@@ -1,11 +1,16 @@
 import React from "react";
-import profilePic from "../image/profile-pic.JPG"
+import profilePic from "../image/profile-pic.JPG";
 import styled from "styled-components";
-import {About,Description,Image,Hide} from "../styles"
+import {About,Description,Image,Hide} from "../styles";
+
+import { scrollReveal } from "../animation";
+import { useScroll } from "./useScroll";
+
 
 const ServicesSection = () => {
+    const [element,controls] = useScroll();
     return(
-        <Services>
+        <Services variants={scrollReveal} animate={controls} initial="hidden" ref={element}>
             <Description>
                 <Hide>
                     <h2>Checkout my <span>services</span></h2>
