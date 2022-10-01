@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import musicPlayerPic from '../image/music-player.png';
@@ -14,53 +13,58 @@ import { pageAnimation,
 } from "../animation"
 import { useScroll } from "../components/useScroll";
 import ScrollTop from "../components/ScrollTop";
-
+import Particle from "../components/Particle";
 
 const ProgrammingProjects = () => {
     const [element, controls] = useScroll();
     const [element2, controls2] = useScroll();
     return(
+        
         <Projects        
         exit="exit"
         variants={pageAnimation}
         initial="hidden"
         animate="show"
-        style={{background: "#fff"}}>
-            <motion.div variants={frameTransContainer}>
-                <Frame1 variants={frameTrans}></Frame1>
-                <Frame2 variants={frameTrans}></Frame2>
-                <Frame3 variants={frameTrans}></Frame3>
-                <Frame4 variants={frameTrans}></Frame4>
-            </motion.div>
-            <Example>
-                <motion.h2 variants={fade}>Music Player</motion.h2>
-                <motion.div variants={lineAnim} className="line"></motion.div>
-                <Link to="/">
-                    <motion.div variants={photoAnim}  className="container">
-                    <img src={musicPlayerPic} alt="" />
-                    </motion.div>
-                </Link>
-            </Example>
-            <Example ref={element} variants={fade} animate={controls} initial="hidden">
-                <h2>3D Tetromino</h2>
-                <motion.div variants={lineAnim} className="line"></motion.div>
-                <Link to="/">
-                <div className="container">
-                    <img src={tetrominoPic} alt="" />
+        >
+            <StyledDiv>
+              <motion.div variants={frameTransContainer}>
+                    <Frame1 variants={frameTrans}></Frame1>
+                    <Frame2 variants={frameTrans}></Frame2>
+                    <Frame3 variants={frameTrans}></Frame3>
+                    <Frame4 variants={frameTrans}></Frame4>
+                </motion.div>
+                <Example>
+                    <motion.h2 variants={fade}>Music Player</motion.h2>
+                    <motion.div variants={lineAnim} className="line"></motion.div>
+                    <Link to="/">
+                        <motion.div variants={photoAnim}  className="container">
+                        <img src={musicPlayerPic} alt="" />
+                        </motion.div>
+                    </Link>
+                </Example>
+                <Example ref={element} variants={fade} animate={controls} initial="hidden">
+                    <h2>3D Tetromino</h2>
+                    <motion.div variants={lineAnim} className="line"></motion.div>
+                    <Link to="/">
+                    <div className="container">
+                        <img src={tetrominoPic} alt="" />
+                        </div>
+                    </Link>
+                </Example>
+                <Example ref={element2} variants={fade} animate={controls2} initial="hidden">
+                    <h2>X-Plore: The Country Stats App</h2>
+                    <motion.div variants={lineAnim} className="line"></motion.div>
+                    <Link to="/">
+                    <div className="container">
+                        <img src={xPlorePic} alt="" />
                     </div>
-                </Link>
-            </Example>
-            <Example ref={element2} variants={fade} animate={controls2} initial="hidden">
-                <h2>X-Plore: The Country Stats App</h2>
-                <motion.div variants={lineAnim} className="line"></motion.div>
-                <Link to="/">
-                <div className="container">
-                    <img src={xPlorePic} alt="" />
-                </div>
-                </Link>
-            </Example>
-            <ScrollTop />
+                    </Link>
+                </Example>
+                </StyledDiv>
+                <ScrollTop />
+            <Particle />
         </Projects>
+        
     )
 }
 
@@ -75,16 +79,20 @@ const Projects = styled(motion.div)`
             padding: 2rem 2rem;
         }
 `
+const StyledDiv = styled.div`
+    z-index = 10;
+`
 
 const Example = styled(motion.div)`
     padding-bottom: 10rem;
+    z-index: 3;
     .line{
         height: 0.5rem;
-        background: #cc0000;
+        background: #14ffec;
         margin-bottom: 3rem;
     }
     .container{
-        background: #00a2ff;
+        background: #0d7377;
         padding: 5px;
         border-radius: 10px; 
         width: 90vh;     
@@ -105,6 +113,8 @@ const Example = styled(motion.div)`
             }
         }
 `
+
+
 
 const Frame1 = styled(motion.div)`
     position: fixed;

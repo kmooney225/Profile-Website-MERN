@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background: #150000;
+        background: #212121;
         font-family: 'Montserrat', sans-serif;
         overflow-x: hidden;
     }
@@ -24,17 +24,19 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.1rem;
         cursor: pointer;
         padding: 1rem 2rem;
-        border: 3px solid #cc0000;
+        border: 3px solid #14ffec;
         background: transparent;
         color: white;
         transition: all 0.5s ease;
         font-family: 'Montserrat', sans-serif;
         &:hover{
-            background-color: #cc0000;
+            background-color: #0d7377;
             color: white;
         }
     }
+    
     h2{
+        color: white;
         font-weight: lighter;
         font-size: 4rem;
     }

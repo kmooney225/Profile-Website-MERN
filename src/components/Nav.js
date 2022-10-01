@@ -59,7 +59,7 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 10rem;
-    background: #400000;
+    background: #323232;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -100,7 +100,7 @@ const StyledNav = styled.nav`
 
 const Line = styled(motion.div)`
     height: 0.3rem;
-    background: #cc0000;
+    background: #14ffec;
     position: absolute;
     bottom: -50%;
     @media (max-width: 1300px){

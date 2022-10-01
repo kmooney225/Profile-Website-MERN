@@ -11,7 +11,7 @@ const ContactMe = () => {
         variants={pageAnimation} 
         initial="hidden"
         animate="show"
-        style={{background: "#fff"}}>
+        >
             <Title>
                 <motion.h2 variants={{titleAnim}}> 
                     Get in Touch!
@@ -40,7 +40,7 @@ const ContactMe = () => {
 
 const ContactStyle = styled(motion.div)`
     padding: 5rem 10rem;
-    color: #150000;
+    color:  white;
     min-height: 90vh;
     @media (max-width: 1500px){
             padding: 2rem;
@@ -49,7 +49,7 @@ const ContactStyle = styled(motion.div)`
 `
 const Title = styled.div`
     margin-bottom: 4rem;
-    color: black;
+    color: white;
     @media (max-width: 1500px){
             margin-top: 5rem;
         }
@@ -60,7 +60,7 @@ const Circle = styled.div`
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
-    background: #150000;
+    background: white;
 `
 
 const Social = styled(motion.div)`
