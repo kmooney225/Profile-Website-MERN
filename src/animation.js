@@ -20,6 +20,28 @@ export const pageAnimation = {
     },
 };
 
+export const projectPageAnimation = {
+    hidden: {
+        opacity: 1,
+        y: 300,
+    },
+    show: {
+        opcaity: 1,
+        y: 0,
+        transition: {
+            duration: 1,
+            when: "beforeChildren",
+            staggerChildren: 0.5,
+        },
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            duration: 0.5,
+        },
+    },
+};
+
 export const titleAnim = {
     hidden: {
         opacity: 0,
@@ -61,26 +83,24 @@ export const lineAnim = {
 }
 
 export const frameTrans = {
-    hidden: {x: '-130%', skew: '45deg'},
     show: {
         x: '100%',
-        skew: '0deg',
-        transition: {ease: 'easeOut', duration: 1}
+        transition: { ease: 'easeOut', duration: 2}
     }
 }
 
 export const frameTransContainer = {
     hidden: {opacity: 1},
-    show: {opacity: 1, transition: {staggerChildren: 0.1, ease: 'easeOut'}}
+    show: {opacity: 1, transition: {staggerChildren: 3, ease: 'easeOut'}}
 }
 
 export const scrollReveal = {
-    hidden: {opacity: 0, scale: 1.2, transition:{duration: 0.5}},
+    hidden: {opacity: 0, scale: 1.2, transition:{duration: .7}},
     show: {
         opacity: 1,
         scale: 1,
         transition: {
-            duration: 0.5,
+            duration: .7,
         }
     }
 }
