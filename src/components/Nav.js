@@ -59,6 +59,9 @@ const StyledNav = styled.nav`
     align-items: center;
     padding: 1rem 10rem;
     background: #400000;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     a{
         color: white;
         text-decoration: none;

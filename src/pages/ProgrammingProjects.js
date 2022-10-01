@@ -5,10 +5,20 @@ import musicPlayerPic from '../image/music-player.png';
 import tetrominoPic from '../image/3-d-tetromino.png';
 import xPlorePic from '../image/x-plore.png';
 import { motion } from "framer-motion";
-import { pageAnimation, fade, photoAnim, lineAnim, frameTrans, frameTransContainer} from "../animation"
+import { pageAnimation, 
+    fade, 
+    photoAnim, 
+    lineAnim, 
+    frameTrans, 
+    frameTransContainer
+} from "../animation"
+import { useScroll } from "../components/useScroll";
+import ScrollTop from "../components/ScrollTop";
 
 
 const ProgrammingProjects = () => {
+    const [element, controls] = useScroll();
+    const [element2, controls2] = useScroll();
     return(
         <Projects        
         exit="exit"
@@ -31,24 +41,25 @@ const ProgrammingProjects = () => {
                     </motion.div>
                 </Link>
             </Example>
-            <Example>
+            <Example ref={element} variants={fade} animate={controls} initial="hidden">
                 <h2>3D Tetromino</h2>
-                <div className="line"></div>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/">
                 <div className="container">
                     <img src={tetrominoPic} alt="" />
                     </div>
                 </Link>
             </Example>
-            <Example>
+            <Example ref={element2} variants={fade} animate={controls2} initial="hidden">
                 <h2>X-Plore: The Country Stats App</h2>
-                <div className="line"></div>
+                <motion.div variants={lineAnim} className="line"></motion.div>
                 <Link to="/">
                 <div className="container">
                     <img src={xPlorePic} alt="" />
                 </div>
                 </Link>
             </Example>
+            <ScrollTop />
         </Projects>
     )
 }
@@ -62,7 +73,7 @@ const Projects = styled(motion.div)`
 
 `
 
-const Example = styled.div`
+const Example = styled(motion.div)`
     padding-bottom: 10rem;
     .line{
         height: 0.5rem;

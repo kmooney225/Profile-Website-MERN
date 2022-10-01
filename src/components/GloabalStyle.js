@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         background: #150000;
         font-family: 'Montserrat', sans-serif;
+        overflow-x: hidden;
     }
     button{
         font-weight: bold;

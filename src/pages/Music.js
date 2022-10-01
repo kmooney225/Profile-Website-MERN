@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation"
+import ScrollTop from "../components/ScrollTop";
 
 const Music = () => {
     return(
@@ -10,6 +11,7 @@ const Music = () => {
         initial="hidden"
         animate="show">
             <h1>Our Work</h1>
+            <ScrollTop />
         </motion.div>
     )
 }
