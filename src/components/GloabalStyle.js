@@ -8,6 +8,12 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html{
+        @media (max-width: 1700px){
+            font-size: 70%
+        }
+    }
+
     body{
         background: #150000;
         font-family: 'Montserrat', sans-serif;
@@ -17,14 +23,14 @@ const GlobalStyle = createGlobalStyle`
         font-weight: bold;
         font-size: 1.1rem;
         cursor: pointer;
-        padding: 1rem 2 rem;
+        padding: 1rem 2rem;
         border: 3px solid #cc0000;
         background: transparent;
         color: white;
         transition: all 0.5s ease;
         font-family: 'Montserrat', sans-serif;
         &:hover{
-            background-color: #cc0000;;
+            background-color: #cc0000;
             color: white;
         }
     }

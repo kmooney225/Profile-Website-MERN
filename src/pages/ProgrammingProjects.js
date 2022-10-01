@@ -66,11 +66,14 @@ const ProgrammingProjects = () => {
 
 const Projects = styled(motion.div)`
     minHeight: 100vh;
+    overflow: hidden;
     padding: 5rem 10rem;
     h2 {
         padding: 1rem 0rem;
     }
-
+    @media (max-width: 1300px){
+            padding: 2rem 2rem;
+        }
 `
 
 const Example = styled(motion.div)`
@@ -84,14 +87,23 @@ const Example = styled(motion.div)`
         background: #00a2ff;
         padding: 5px;
         border-radius: 10px; 
-        width: 80vh;     
+        width: 90vh;     
     }
     img{
-        height: 100%;
         width: 100%;
+        height: 90vh;
         object-fit: cover;
         border-radius: 10px;
+        align-items: center;
     }
+    @media (max-width: 700px){
+        .container{
+            width: 100%;
+        }
+            img{
+                height: 100%;
+            }
+        }
 `
 
 const Frame1 = styled(motion.div)`
