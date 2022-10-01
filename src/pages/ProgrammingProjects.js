@@ -26,7 +26,6 @@ const ProgrammingProjects = () => {
         initial="hidden"
         animate="show"
         >
-            <StyledDiv>
               <motion.div variants={frameTransContainer}>
                     <Frame1 variants={frameTrans}></Frame1>
                     <Frame2 variants={frameTrans}></Frame2>
@@ -60,9 +59,8 @@ const ProgrammingProjects = () => {
                     </div>
                     </Link>
                 </Example>
-                </StyledDiv>
+                <Particle />
                 <ScrollTop />
-            <Particle />
         </Projects>
         
     )
@@ -71,6 +69,7 @@ const ProgrammingProjects = () => {
 const Projects = styled(motion.div)`
     minHeight: 100vh;
     overflow: hidden;
+    z-index: 1;
     padding: 5rem 10rem;
     h2 {
         padding: 1rem 0rem;
@@ -79,25 +78,24 @@ const Projects = styled(motion.div)`
             padding: 2rem 2rem;
         }
 `
-const StyledDiv = styled.div`
-    z-index = 10;
-`
 
 const Example = styled(motion.div)`
     padding-bottom: 10rem;
-    z-index: 3;
+  
     .line{
         height: 0.5rem;
         background: #14ffec;
         margin-bottom: 3rem;
     }
     .container{
+        z-index: 10;
         background: #0d7377;
         padding: 5px;
         border-radius: 10px; 
         width: 90vh;     
     }
     img{
+        
         width: 100%;
         height: 90vh;
         object-fit: cover;

@@ -17,88 +17,88 @@ const Particle = () => {
         await console.log(container);
     }, []);
     return(
-        <StyledDiv>
-          <Particles
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={{
-        background: {
-          color: {
-            value: "Transparent",
+        <Particles
+
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={{
+        fullScreen: { zIndex:-1},
+          background: {
+            color: {
+              value: "Transparent",
+            },
           },
-        },
-        interactivity: {
-          events: {
-            onClick: {
+          interactivity: {
+            events: {
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              push: {
+                quantity: 1,
+              },
+              repulse: {
+                distance: 100,
+                duration: 0.8,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: "#ffffff",
+            },
+            links: {
+              color: "#ffffff",
+              distance: 50,
               enable: true,
-              mode: "push",
+              opacity: 0.5,
+              width: 1,
             },
-            onHover: {
+            collisions: {
               enable: true,
-              mode: "repulse",
             },
-            resize: true,
-          },
-          modes: {
-            push: {
-              quantity: 1,
-            },
-            repulse: {
-              distance: 100,
-              duration: 0.8,
-            },
-          },
-        },
-        particles: {
-          color: {
-            value: "#ffffff",
-          },
-          links: {
-            color: "#ffffff",
-            distance: 150,
-            enable: true,
-            opacity: 0.5,
-            width: 1,
-          },
-          collisions: {
-            enable: true,
-          },
-          move: {
-            directions: "none",
-            enable: true,
-            outModes: {
-              default: "bounce",
-            },
-            random: false,
-            straight: false,
-          },
-          number: {
-            density: {
+            move: {
+              directions: "none",
               enable: true,
-              area: 800,
+              outModes: {
+                default: "bounce",
+              },
+              random: false,
+              straight: false,
             },
-            value: 80,
+            number: {
+              density: {
+                enable: true,
+                area: 800,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.8,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              value: { min: 1, max: 5 },
+            },
           },
-          opacity: {
-            value: 0.8,
-          },
-          shape: {
-            type: "circle",
-          },
-          size: {
-            value: { min: 1, max: 5 },
-          },
-        },
-        detectRetina: true,
-      }}
+          detectRetina: true,
+        }}
     />
-      </StyledDiv>
     )
 }
 
-const StyledDiv = styled.div`
-    z-index: 2;
+const StyledParticles = styled.div`
+    z-index: 9;
+    height: 100%;
 `
 
 export default Particle;

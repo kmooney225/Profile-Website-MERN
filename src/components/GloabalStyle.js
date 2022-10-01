@@ -34,7 +34,6 @@ const GlobalStyle = createGlobalStyle`
             color: white;
         }
     }
-    
     h2{
         color: white;
         font-weight: lighter;
