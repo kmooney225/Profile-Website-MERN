@@ -76,19 +76,64 @@ const Particle = () => {
             number: {
               density: {
                 enable: true,
-                area: 800,
+                area: 1600,
               },
               value: 80,
             },
             opacity: {
-              value: 0.8,
+              value: 0.4,
             },
             shape: {
-              type: "circle",
+                type: "char",
+                character: [{
+                    fill: true,
+                    font: "Verdana",
+                    style: "",
+                    value: "js",
+                    weight: "400"
+                  },
+                  {
+                    fill: false,
+                    font: "Verdana",
+                    style: "",
+                    value: "html",
+                    weight: "400"
+                  },
+                  {
+                    fill: false,
+                    font: "Verdana",
+                    style: "",
+                    value: "css",
+                    weight: "400"
+                  },
+                  {
+                    fill: false,
+                    font: "Verdana",
+                    style: "",
+                    value: "c#",
+                    weight: "400"
+                  },
+                  {
+                    fill: false,
+                    font: "Verdana",
+                    style: "",
+                    value: "python",
+                    weight: "400"
+                  },
+                  {
+                    fill: false,
+                    font: "Verdana",
+                    style: "",
+                    value: "react",
+                    weight: "400"
+                  }],
             },
             size: {
-              value: { min: 1, max: 5 },
+              value: { min: 5, max: 10 },
             },
+            speed: {
+                value: 200,
+            }
           },
           detectRetina: true,
         }}
