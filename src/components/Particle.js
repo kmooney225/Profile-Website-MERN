@@ -125,6 +125,13 @@ const Particle = () => {
                     fill: false,
                     font: "Verdana",
                     style: "",
+                    value: "</>",
+                    weight: "400"
+                  },
+                  {
+                    fill: false,
+                    font: "Verdana",
+                    style: "",
                     value: "react",
                     weight: "400"
                   }],
@@ -138,10 +145,5 @@ const Particle = () => {
     />
     )
 }
-
-const StyledParticles = styled.div`
-    z-index: 9;
-    height: 100%;
-`
 
 export default Particle;

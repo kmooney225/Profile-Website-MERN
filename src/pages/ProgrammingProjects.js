@@ -1,9 +1,6 @@
 import { ReactComponentElement } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import musicPlayerPic from '../image/music-player.png';
-import tetrominoPic from '../image/3-d-tetromino.png';
-import xPlorePic from '../image/x-plore.png';
 import { motion } from "framer-motion";
 import { projectPageAnimation, 
     frameTrans, 
