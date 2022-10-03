@@ -106,13 +106,13 @@ const Projects = styled(motion.div)`
         font-size: 1.1rem;
         cursor: pointer;
         padding: 1rem 2rem;
-        border: 3px solid #14ffec;
+        border: 3px solid #ff0000;
         background: transparent;
-        color: #212121;
+        color: #100000;
         transition: all 0.5s ease;
         font-family: 'Montserrat', sans-serif;
         &:hover{
-            background-color: #0d7377;
+            background-color: #950101;
             color: white;
         }
     }
