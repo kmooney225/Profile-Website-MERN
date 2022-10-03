@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background: #212121;
+        background: #200000;
         font-family: 'Montserrat', sans-serif;
         overflow-x: hidden;
     }

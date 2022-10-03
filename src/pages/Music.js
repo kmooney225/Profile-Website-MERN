@@ -46,7 +46,6 @@ const Music = () => {
                                     <p className="description">
                                         {element.description}
                                     </p>
-                                    {showButton && <a className={`button ${0 ? "" : ""}`} href="/"> {element.buttonText}</a>}
                                 </VerticalTimelineElement>
                             );
                         })
