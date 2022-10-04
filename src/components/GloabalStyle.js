@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
         padding: 1rem 2rem;
         border: 3px solid #ff0000;
+        border-radius: 20px;
         background: transparent;
         color: white;
         transition: all 0.5s ease;

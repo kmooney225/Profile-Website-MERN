@@ -41,8 +41,8 @@ const AboutSection = () => {
                 <motion.p variants={fade}>I'm a web developer who aspires to
                 work on front-end technologies.
                 <br /><br />
-                I'm also a talented music with 15 years of experiences playing for 
-                venues.
+                I'm also a talented musician with 15 years of experiences playing
+                saxophone for various venues.
                 </motion.p>
                 <motion.button variants={fade}>Contact Me</motion.button>
             </Description>
