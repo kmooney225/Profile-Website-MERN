@@ -8,7 +8,7 @@ export const About = styled(motion.div)`
     justify-content: space-between;
     padding: 2rem 10rem;
     color: white;
-    @media (max-width: 1300px){
+    @media (max-width: 850px){
             display: block;
             padding: 2rem 2rem;
             text-align: center;
@@ -29,14 +29,18 @@ export const Description = styled.div`
 `;
 
 export const Image = styled.div`
-    z-index: 2;
+    z-index: 3;
     flex: 1;
-    img{
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    #particle-image {
+        height: 100%;
         width: 100%;
-        height: 80vh;
-        object-fit: cover;
     }
 `;
+
+
 
 export const Hide = styled.div`
     overflow: hidden;
