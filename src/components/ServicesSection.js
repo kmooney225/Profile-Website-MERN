@@ -30,7 +30,7 @@ const ServicesSection = () => {
             <a>Python</a>
         </Cloud>
 
-        <div>
+        <div className="about-me">
             <h1>About Me</h1>
             <p>Hey, I'm Kevin, an American web developer and musician. I enjoy working on
                 and learning from all sorts of experiences, being it an building a 3d
@@ -62,6 +62,9 @@ const Services = styled(About)`
     }
     a{
         font-size: 80px;
+    }
+    .about-me{
+        left: 100rem;
     }
 `
 
