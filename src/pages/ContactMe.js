@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { pageAnimation, titleAnim } from "../animation";
 import styled from "styled-components";
+import proImg from "../image/professional-profile-pic.JPG"
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icons"
@@ -28,7 +29,9 @@ const ContactMe = () => {
             </p>
   
             <div className="info">
-              <img src="../image/professional-profile-pic.JPG" />
+              <img 
+              src={proImg} 
+              />
             </div>
   
             <div className="social-media">
@@ -270,13 +273,12 @@ const ContactStyle = styled(motion.div)`
     color: #200000;
     margin: 1.5rem 0 2rem 0;
     }
-
-    .information {
-    display: flex;
-    color: #555;
-    margin: 0.7rem 0;
-    align-items: center;
-    font-size: 0.95rem;
+    .info {
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
     }
 
     .icon {
@@ -339,6 +341,7 @@ const ContactStyle = styled(motion.div)`
         grid-template-columns: 1fr;
     }
 
+
     .contact-info:before {
         bottom: initial;
         top: -75px;
@@ -383,7 +386,6 @@ const ContactStyle = styled(motion.div)`
     }
 
     .text,
-    .information,
     .social-media p {
         font-size: 0.8rem;
     }
