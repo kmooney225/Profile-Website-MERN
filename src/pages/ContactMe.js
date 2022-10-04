@@ -16,75 +16,70 @@ const ContactMe = () => {
         initial="hidden"
         animate="show"
         >
-        <div class="container">
-        <img src="img/shape.png" class="square" alt="" />
-        <div class="form">
-          <div class="contact-info">
-            <h3 class="title">Let's get in touch</h3>
-            <p class="text">
+        <div className="container">
+        <img className="square" alt="" />
+        <div className="form">
+          <div className="contact-info">
+            <h3 className="title">Let's get in touch</h3>
+            <p className="text">
               From events needing a saxophonist to a professional needing
               a website created, I am always up for new challenges and 
               creating new experiences for people!
             </p>
   
-            <div class="info">
-              <div class="information">
-                <img src="img/location.png" class="icon" alt="" />
-                <p>Denver, Co, USA</p>
-              </div>
-              <div class="information">
-                <img src="img/email.png" class="icon" alt="" />
-                <p>lorem@ipsum.com</p>
-              </div>
-              <div class="information">
-                <img src="img/phone.png" class="icon" alt="" />
-                <p>123-456-789</p>
-              </div>
+            <div className="info">
+              <img src="../image/professional-profile-pic.JPG" />
             </div>
   
-            <div class="social-media">
+            <div className="social-media">
               <p>Connect with me :</p>
-              <div class="social-icons">
+              <div className="social-icons">
                 <a href="https://www.youtube.com/channel/UCIL-NqaRlwymARo2uPe2KvA">
                     <FontAwesomeIcon 
                     icon={faYoutube}
-                    size={30}
+                    size="2x"
                     />
                 </a>
                 <a href="https://github.com/kmooney225">
-                    <FontAwesomeIcon icon={faGithub} />
+                    <FontAwesomeIcon 
+                    icon={faGithub}
+                    size="2x"
+                     />
                 </a>
                 <a href="https://www.linkedin.com/in/kevin-mooney-b4abab165/">
-                <FontAwesomeIcon icon={faLinkedin} />
+                <FontAwesomeIcon 
+                icon={faLinkedin}
+                size="2x"
+                 />
                 </a>
               </div>
             </div>
           </div>
   
-          <div class="contact-form">
+          <div className="contact-form">
             <form>
-              <h3 class="title">Contact me :)</h3>
-              <div class="input-container">
-                <input type="text" name="name" class="input" />
-                <label for="">Username</label>
+              <h3 className="title">Contact me :)</h3>
+              <div className="input-container">
+                <input type="text" name="name" className="input" />
+                <label >Username</label>
                 <span>Username</span>
               </div>
-              <div class="input-container">
-                <input type="email" name="email" class="input" />
-                <label for="">Email</label>
+              <div className="input-container">
+                <input type="email" name="email" className="input" />
+                <label >Email</label>
                 <span>Email</span>
               </div>
-              <div class="input-container">
-                <input type="tel" name="phone" class="input" />
-                <label for="">Phone</label>
+              <div className="input-container">
+                <input type="tel" name="phone" className="input" />
+                <label >Phone</label>
                 <span>Phone</span>
               </div>
-              <div class="input-container textarea">
-                <textarea name="message" class="input"></textarea>
-                <label for="">Message</label>
+              <div className="input-container textarea">
+                <textarea name="message" className="input"></textarea>
+                <label >Message</label>
                 <span>Message</span>
               </div>
-              <input type="submit" value="Send" class="btn" />
+              <input type="submit" value="Send" className="btn" />
             </form>
           </div>
         </div>
@@ -129,7 +124,7 @@ const ContactStyle = styled(motion.div)`
     position: absolute;
     width: 26px;
     height: 26px;
-    background: #dd0000;
+    background: #d00000;
     transform: rotate(45deg);
     top: 50px;
     left: -13px;
@@ -303,8 +298,8 @@ const ContactStyle = styled(motion.div)`
     }
 
     .social-icons a {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 30px;
     border-radius: 5px;
     background: linear-gradient(45deg, #900000, #ee0000);
     color: #fff;
@@ -356,7 +351,7 @@ const ContactStyle = styled(motion.div)`
         top: -13px;
         left: initial;
         right: 70px;
-        background: linear-gradient(to left, #a80000, #cc0000);
+        background: #a70000
     }
 
     .square {
