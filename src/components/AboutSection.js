@@ -34,20 +34,15 @@ const AboutSection = () => {
                 <motion.div>
                     <Hide>
                         <motion.h2 variants={titleAnim}>
-                            Creating. 
-                        </motion.h2>
-                    </Hide>
-                    <motion.h2 variants={titleAnim}>
-                            Inventing. 
-                        </motion.h2>
-                    <Hide>
-                    <motion.h2 variants={titleAnim}>
-                           Dreaming. 
+                            Kevin Mooney 
                         </motion.h2>
                     </Hide>
                 </motion.div>
-                <motion.p variants={fade}>Contact me for any music 
-                    or website creating services that you need. 
+                <motion.p variants={fade}>I'm a web developer who aspires to
+                work on front-end technologies.
+                <br /><br />
+                I'm also a talented music with 15 years of experiences playing for 
+                venues.
                 </motion.p>
                 <motion.button variants={fade}>Contact Me</motion.button>
             </Description>
