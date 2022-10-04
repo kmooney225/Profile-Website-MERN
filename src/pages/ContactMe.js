@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { pageAnimation, titleAnim } from "../animation";
 import styled from "styled-components";
 
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icons"
+
 const ContactMe = () => {
     
     return (
@@ -42,17 +45,17 @@ const ContactMe = () => {
             <div class="social-media">
               <p>Connect with me :</p>
               <div class="social-icons">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
+                <a href="https://www.youtube.com/channel/UCIL-NqaRlwymARo2uPe2KvA">
+                    <FontAwesomeIcon 
+                    icon={faYoutube}
+                    size={30}
+                    />
                 </a>
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
+                <a href="https://github.com/kmooney225">
+                    <FontAwesomeIcon icon={faGithub} />
                 </a>
-                <a href="#">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
+                <a href="https://www.linkedin.com/in/kevin-mooney-b4abab165/">
+                <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               </div>
             </div>
@@ -107,7 +110,7 @@ const ContactStyle = styled(motion.div)`
     .form {
     width: 100%;
     max-width: 820px;
-    background-color: #fff;
+    background: linear-gradient(to top left, #fff, #bbb);
     border-radius: 10px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -300,8 +303,8 @@ const ContactStyle = styled(motion.div)`
     }
 
     .social-icons a {
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     border-radius: 5px;
     background: linear-gradient(45deg, #900000, #ee0000);
     color: #fff;
