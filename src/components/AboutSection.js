@@ -49,7 +49,7 @@ const AboutSection = () => {
                 src={saxophonePic}
                 scale={0.15}
                 entropy={20}
-                maxParticles={1000}
+                maxParticles={2000}
                 mouseMoveForce={motionForce}
                 touchMoveForce={motionForce}
                 particleOptions={particleOptions}
