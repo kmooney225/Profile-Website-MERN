@@ -17,13 +17,20 @@ const ProgrammingProjects = () => {
         {id: 2, name:"Extraneous Projects", isSet: false},
       ]);
 
-    const setAll = () => {
-
-    }
+    let isAll = false;
 
     const Filters = () =>
         <form>
             <ul>
+            <li onClick={() => allCards()} >
+                    <input 
+                    id={10}
+                    type="checkbox" 
+                    checked={isAll}
+                    onChange={e => {}}
+                    />
+                    <label htmlFor="all">All</label>
+                </li>
             {filters.map(
                 (filter, i)=>
                 <li  key={i} data-index={i} onClick={() => onFilter(i)} >
@@ -47,9 +54,16 @@ const ProgrammingProjects = () => {
         ))
     }
 
-    let cardArray = [];
+    const allCards = () => {
+        setFilters(
+            filters.map((item) => 
+            ({...item, isSet: true })
+        ))
+        isAll = true;
+        }
+
     const Cards = () => {
-        cardArray = [];
+        let cardArray = [];
 
         ProjectElements.forEach((card, cardKey) => {
             filters.forEach((filter, filterKey)=> {  
