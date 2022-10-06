@@ -5,7 +5,7 @@ import ScrollTop from "../components/ScrollTop";
 import MusicParticle from "../components/MusicParticle";
 import MusicTimelineElements from "../components/MusicTimelineElements";
 import "react-vertical-timeline-component/style.min.css"
-import "../scss/Work.scss"
+
 
 const Cards = () => {
     return(
