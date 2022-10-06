@@ -19,6 +19,20 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
         overflow-x: hidden;
     }
+
+    body::-webkit-scrollbar {
+    width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:vertical {
+    background: #555; 
+    border-radius: 3px;
+    }
+
+
+    ::-webkit-scrollbar-track {
+    background: #fff; 
+    }
     button{
         font-weight: bold;
         font-size: 1.1rem;

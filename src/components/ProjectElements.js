@@ -7,7 +7,7 @@ const ProjectElements = [
         img: require('../image/music-player.png'),
         description:
           "A modern music player created using React.js.",
-        buttonText: "View Project",
+        link: "https://cool-mandazi-092c82.netlify.app/",
         tag: "Web Projects",
       },
       {
@@ -16,7 +16,7 @@ const ProjectElements = [
         img: require('../image/3-d-tetromino.png'),
         description:
           "A C# game recreating a 3d version of Tetris. Made in Unity.",
-        buttonText: "View Project",
+        link: "https://simmer.io/@kmoney225/3d-tetromino",
         tag: "Extraneous Projects",
       },
       {
@@ -25,7 +25,7 @@ const ProjectElements = [
         img: require('../image/x-plore.png'),
         description:
           "A React App showing statistics of all countries.",
-        buttonText: "View Project",
+        link: "View Project",
         tag: "Clients' Projects",
       },
     ]

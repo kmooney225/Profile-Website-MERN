@@ -67,8 +67,8 @@ const ProgrammingProjects = () => {
             <figure>
                 <img src={card.img} alt={card.title}/>
                 <figcaption> 
-                <div>{card.title} </div>
-                <span>{card.tag}</span>
+                <span>{card.title}</span>
+                <div className="description">{card.description}</div>
                 </figcaption>
             </figure>
             </li>)}
@@ -98,10 +98,9 @@ const ProgrammingProjects = () => {
 
 const Projects = styled(motion.div)`
     overflow: hidden;
-    z-index: 1;
         
-    body:before{
-    content: '';
+    body{
+
     display: block;
     position: absolute;
 
@@ -110,18 +109,6 @@ const Projects = styled(motion.div)`
     width: 300px;
     height: 300px;
     background: #faa7b730;
-    }
-
-    body:after{
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: -2;
-    bottom: -120px;
-    left: -120px;
-    width: 400px;
-    height: 400px;
-    background: #a8b4fc30;
     }
 
     form{
@@ -135,20 +122,24 @@ const Projects = styled(motion.div)`
     }
 
     label{
-    background: #fff;
+    background: linear-gradient(to bottom right, #fff, #999);
     color: #150000;
     font-weight: 700;
     padding: 8px 10px;
-    border-radius: 10px;
-    transition: .3s;
+    border: #aaa solid;
+    border-width: 1px;
+    border-radius: 8px;
+    transition: .2s;
     cursor: pointer;
     }
 
     input:checked~label{
     background: linear-gradient(to bottom right, #ffffff, #ff8888);
     padding: 5px 10px;
-    border-radius: 10px;
-    box-shadow: 5px 2px 15px #ff9999;
+    border-radius: 6px;
+    border: #daa solid;
+    border-width: 1px;
+    box-shadow: 1px 1px 10px #ff9999;
     }
 
     ul{
@@ -163,67 +154,52 @@ const Projects = styled(motion.div)`
     margin: 10px 10px;
     }
 
-    figure{
-    z-index: 1;
-    min-width: 300px;
-    overflow: hidden;
-    margin: 0 5px;
-    animation: show .8s ease;
+    @keyframes show {
+    0% {
+        opacity: 0;
+     }
+    100% {
+        opacity: 1;
+        }
     }
 
-    @keyframes show {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    figure{
+    z-index: 1;
+    background-color: #aaa;
+    border: outset;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px 5px #ffffff25;
+    color: #212121;
+    font-style: italic;
+    padding: 2px;
+    text-align: center;
+    width: 400px;
+    overflow: hidden;
+    animation: show .5s ease-in-out;
     }
 
     img{
     width: 300px;
     height: 250px;
     left: 0;
+    border: solid;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 10px 15px #ffffff30;
+    animation: show .5s ease-in-out;
     }
 
     figcaption{
-    font-size: 24px;
-    margin-top: 20px;
+    font-size: 18px;
+    background: white;
+    border-radius: 10px  10px 20px 20px;
+    border: #444 solid;
+    padding: 30px 0 20px 0;
+    animation: show .5s ease-in-out;
     }
 
     figure figcaption{
     margin: 0;
     position: relative;
-    z-index: -1;
-    }
-
-    figure:hover figcaption{
-    opacity: 1;
-    transform: translateY(-19px);
-    }
-
-    figcaption{
-    opacity: 0;
-    transform: translateY(-200px);
-    background: white;
-    border-radius: 0  0 20px 20px;
-    padding: 30px 0 20px 0;
-    transition: .3s;
-    }
-
-    @keyframes transform{
-    0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; }
-    14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
-    28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
-    42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
-    56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
-    70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
-    84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
-    }
-
-
-    @keyframes movement{
-    0%,100% { transform: none; }
-    50% { transform: translateY(20%) rotateY(10deg); }
     }
 
 `
