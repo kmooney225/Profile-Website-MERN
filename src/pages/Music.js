@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icons"
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { projectPageAnimation, 
@@ -8,8 +11,11 @@ import MusicParticle from "../components/MusicParticle";
 import MusicTimelineElements from "../components/MusicTimelineElements";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css"
+import "../scss/Work.scss"
+
 
 const Music = () => {
+
     return(
          
         <Projects        
@@ -19,38 +25,8 @@ const Music = () => {
         animate="show"
         >
             <ScrollTop />
-                    <Frame1 variants={frameTrans}></Frame1>
-                <VerticalTimeline className="timeline">
-                    {MusicTimelineElements.map((element) => {
-                        let showButton = 
-                        element.buttonText !== undefined && 
-                        element.buttonText !== null && 
-                        element.buttonText !== "";
-                            return (
-                                <VerticalTimelineElement className="vertical-timeline-element"
-                                key={element.id}
-                                >
-                                    <h3 className="vertical-timeline-element-title">
-                                        {element.title}
-                                    </h3>
-                                    <iframe 
-                                        width="100%" 
-                                        height="50vh" 
-                                        src={element.video} 
-                                        title="YouTube video player" 
-                                        frameborder="0" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen
-                                    >
-                                    </iframe>
-                                    <p className="description">
-                                        {element.description}
-                                    </p>
-                                </VerticalTimelineElement>
-                            );
-                        })
-                    }
-                </VerticalTimeline>
+            <h2 className="head-text">The <span>Music</span> Section</h2>
+
                 <MusicParticle />
         </Projects>
     )

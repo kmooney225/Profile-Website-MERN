@@ -18,6 +18,7 @@ const ContactMe = () => {
         animate="show"
         >
         <div className="container">
+        
         <img className="square" alt="" />
         <div className="form">
           <div className="contact-info">

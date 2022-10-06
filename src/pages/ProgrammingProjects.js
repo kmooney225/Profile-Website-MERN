@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { projectPageAnimation, 
@@ -5,12 +6,76 @@ import { projectPageAnimation,
 } from "../animation"
 import ScrollTop from "../components/ScrollTop";
 import Particle from "../components/Particle";
-import ProjectsTimelineElements from "../components/ProjectsTimelineElements";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import ProjectElements from "../components/ProjectElements";
 import "react-vertical-timeline-component/style.min.css"
 
 const ProgrammingProjects = () => {
  
+    const [filters, setFilters] = useState([
+        {id: 0, name:"Web Projects", isSet: false},
+        {id: 1, name:"Clients' Projects", isSet: false},
+        {id: 2, name:"Extraneous Projects", isSet: false},
+      ]);
+
+    const setAll = () => {
+
+    }
+
+    const Filters = () =>
+        <form>
+            <ul>
+            {filters.map(
+                (filter, i)=>
+                <li  key={i} data-index={i} onClick={() => onFilter(i)} >
+                    <input 
+                    id={filters.id}
+                    type="checkbox" 
+                    checked={filter.isSet}
+                    onChange={e => {}}
+                    />
+                    <label htmlFor={filter.name}>{filter.name}</label>
+                </li>)}
+            </ul>
+        </form>
+        
+    const onFilter = (index) => {
+        setFilters(
+            filters.map((item) => 
+            item.id === index
+                ? {...item, isSet: !item.isSet }
+                : {...item}
+        ))
+    }
+
+    let cardArray = [];
+    const Cards = () => {
+        cardArray = [];
+
+        ProjectElements.forEach((card, cardKey) => {
+            filters.forEach((filter, filterKey)=> {  
+                if((card.tag===filter.name)&&(filter.isSet===true)){
+                  cardArray.push(card);
+                }
+            })
+            })
+
+        return(
+        <ul>
+        {cardArray.map(
+            (card, i)=>
+            <li  key={i}>
+            <figure>
+                <img src={card.img} alt={card.title}/>
+                <figcaption> 
+                <div>{card.title} </div>
+                <span>{card.tag}</span>
+                </figcaption>
+            </figure>
+            </li>)}
+        </ul>
+        )}
+
+
     return(
         
         <Projects        
@@ -20,31 +85,12 @@ const ProgrammingProjects = () => {
         animate="show"
         >
             <ScrollTop />
-                    <Frame1 variants={frameTrans}></Frame1>
-                <VerticalTimeline className="timeline">
-                    {ProjectsTimelineElements.map((element) => {
-                        let showButton = 
-                        element.buttonText !== undefined && 
-                        element.buttonText !== null && 
-                        element.buttonText !== "";
-                            return (
-                                <VerticalTimelineElement className="vertical-timeline-element"
-                                key={element.id}
-                                >
-                                    <h3 className="vertical-timeline-element-title">
-                                        {element.title}
-                                    </h3>
-                                    <img src={element.img} alt="" />
-                                    <p className="description">
-                                        {element.description}
-                                    </p>
-                                    {showButton && <a className={`button ${0 ? "" : ""}`} href="/"> {element.buttonText}</a>}
-                                </VerticalTimelineElement>
-                            );
-                        })
-                    }
-                </VerticalTimeline>
-                <Particle />
+                <div>
+                    <Filters />
+                    <Cards />
+                    
+                </div>
+            <Particle />
         </Projects>
         
     )
@@ -53,66 +99,133 @@ const ProgrammingProjects = () => {
 const Projects = styled(motion.div)`
     overflow: hidden;
     z-index: 1;
-    padding: 5rem 10rem;
-    h2 {
-        padding: 1rem 0rem;
+        
+    body:before{
+    content: '';
+    display: block;
+    position: absolute;
+
+    top: -120px;
+    right: -120px;
+    width: 300px;
+    height: 300px;
+    background: #faa7b730;
     }
-        .timeline{
-            h3 {
-                color: #100000;
-                padding-top: 1rem;
-                font-size: 24px;
-            }
-            p {
-                color: #100000;
-                font-size: 16px;
-            }
-            img{
-            
-            width: 100%;
-            height: 50vh;
-            margin-top: 1rem;
-            object-fit: cover;
-            border-radius: 20px;
-            align-items: center;
-        }
-        @media (max-width: 700px){
-            img{
-                width: 100%;
-                height: 30vh;
-            }
-        }
+
+    body:after{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -2;
+    bottom: -120px;
+    left: -120px;
+    width: 400px;
+    height: 400px;
+    background: #a8b4fc30;
     }
-    .vertical-timeline-element-content {
-        box-shadow: 0 1rem 2rem 0 rgba(255, 255, 255, 0.25), 0, 0.5rem 2rem 0 rgb(255, 255, 255, 0.15) !important;
-        padding: 2rem 3rem !important;
+
+    form{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 30px 0;
     }
-    .vertical-timeline-element {
-        padding: 3rem;
-        opacity: 0.9;
+
+    input{
+    display: none;
     }
-    #description{
-        margin: 2rem 0 2rem 0;
+
+    label{
+    background: #fff;
+    color: #150000;
+    font-weight: 700;
+    padding: 8px 10px;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
     }
-    .button {
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        cursor: pointer;
-        padding: 1rem 2rem;
-        border: 3px solid #ff0000;
-        background: transparent;
-        color: #100000;
-        transition: all 0.5s ease;
-        font-family: 'Montserrat', sans-serif;
-        &:hover{
-            background-color: #950101;
-            color: white;
-        }
+
+    input:checked~label{
+    background: linear-gradient(to bottom right, #ffffff, #ff8888);
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 5px 2px 15px #ff9999;
     }
-    @media (max-width: 1300px){
-            padding: 2rem 2rem;
-        }
+
+    ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    }
+
+    li{
+    margin: 10px 10px;
+    }
+
+    figure{
+    z-index: 1;
+    min-width: 300px;
+    overflow: hidden;
+    margin: 0 5px;
+    animation: show .8s ease;
+    }
+
+    @keyframes show {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    }
+
+    img{
+    width: 300px;
+    height: 250px;
+    left: 0;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px #ffffff30;
+    }
+
+    figcaption{
+    font-size: 24px;
+    margin-top: 20px;
+    }
+
+    figure figcaption{
+    margin: 0;
+    position: relative;
+    z-index: -1;
+    }
+
+    figure:hover figcaption{
+    opacity: 1;
+    transform: translateY(-19px);
+    }
+
+    figcaption{
+    opacity: 0;
+    transform: translateY(-200px);
+    background: white;
+    border-radius: 0  0 20px 20px;
+    padding: 30px 0 20px 0;
+    transition: .3s;
+    }
+
+    @keyframes transform{
+    0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; }
+    14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+    28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+    42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+    56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+    70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+    84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+    }
+
+
+    @keyframes movement{
+    0%,100% { transform: none; }
+    50% { transform: translateY(20%) rotateY(10deg); }
+    }
+
 `
 
 const Frame1 = styled(motion.div)`
