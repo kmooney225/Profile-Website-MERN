@@ -26,7 +26,7 @@ const ProjectElements = [
         description:
           "A React App showing statistics of all countries.",
         link: "",
-        tag: "Clients' Projects",
+        tag: "Web Projects",
       },
     ]
 

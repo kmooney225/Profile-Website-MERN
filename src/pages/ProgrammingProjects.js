@@ -149,12 +149,12 @@ const Projects = styled(motion.div)`
     }
 
     input:checked~label{
-    background: linear-gradient(to bottom right, #ffffff, #ff8888);
+    background: linear-gradient(to bottom right, #ffaaaa, #ff6666);
     padding: 5px 10px;
     border-radius: 6px;
     border: #daa solid;
     border-width: 1px;
-    box-shadow: 1px 1px 10px #ff9999;
+    box-shadow: 2px 2px 5px #bb5555;
     }
 
     ul{
