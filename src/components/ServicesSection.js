@@ -1,5 +1,4 @@
 import React from "react";
-import profilePic from "../image/profile-pic.JPG";
 import styled from "styled-components";
 import {About,Description,Image,Hide} from "../styles";
 
@@ -22,13 +21,7 @@ const ServicesSection = () => {
       
     return(
     <Services variants={scrollReveal} animate={controls} initial="hidden" ref={element}>
-        <Cloud size={500} >
-            <a>React</a>
-            <a>JS</a>
-            <a>CSS</a>
-            <a>HTML</a>
-            <a>Python</a>
-        </Cloud>
+
 
         <div className="about-me">
             <h1>About Me</h1>

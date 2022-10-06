@@ -1,10 +1,7 @@
 import React from "react";
-import saxophonePic from "../image/saxophone.jpg";
+import saxophonePic from "../image/treble-note.jpg";
 import ParticleImage, {
-    ParticleOptions,
-    Vector,
     forces,
-    ParticleForce
   } from "react-particle-image";
 //import styled from "styled-components";
 import {About, Description, Image, Hide} from "../styles";
@@ -50,13 +47,13 @@ const AboutSection = () => {
             <motion.div variants={photoAnim}>
                 <ParticleImage
                 src={saxophonePic}
-                scale={0.075}
+                scale={0.15}
                 entropy={20}
-                maxParticles={2000}
+                maxParticles={3000}
                 mouseMoveForce={motionForce}
                 touchMoveForce={motionForce}
                 particleOptions={particleOptions}
-                backgroundColor="#100000"
+                backgroundColor="transparent"
             />
              </motion.div>
             </Image>
