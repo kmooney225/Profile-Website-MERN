@@ -101,6 +101,7 @@ const ProgrammingProjects = () => {
         >
             <ScrollTop />
                 <div>
+                <h2 className="head-text">The <span>Project</span> Section</h2>
                     <Filters />
                     <Cards />
                     
@@ -223,8 +224,6 @@ const Projects = styled(motion.div)`
             color: white;
         }
     }
-    
-
 `
 
 const Frame1 = styled(motion.div)`
