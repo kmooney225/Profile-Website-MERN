@@ -1,7 +1,7 @@
 import React from "react";
 
 import { motion } from "framer-motion";
-import { pageAnimation, titleAnim } from "../animation";
+import { pageAnimation } from "../animation";
 import styled from "styled-components";
 import proImg from "../image/professional-profile-pic.JPG"
 
@@ -30,9 +30,7 @@ const ContactMe = () => {
             </p>
   
             <div className="info">
-              <img 
-              src={proImg} 
-              />
+              <img src={proImg} alt="" />
             </div>
   
             <div className="social-media">
@@ -412,14 +410,6 @@ const ContactStyle = styled(motion.div)`
     .btn {
         padding: 0.45rem 1.2rem;
     }
-    }
-`
-
-const Social = styled(motion.div)`
-    display: flex;
-    align-items: center;
-    h2{
-        margin: 2rem;
     }
 `
 

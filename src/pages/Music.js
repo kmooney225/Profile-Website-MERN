@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icons"
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { projectPageAnimation, 
-    frameTrans, 
-} from "../animation"
+import { projectPageAnimation } from "../animation"
 import ScrollTop from "../components/ScrollTop";
 import MusicParticle from "../components/MusicParticle";
 import MusicTimelineElements from "../components/MusicTimelineElements";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css"
 import "../scss/Work.scss"
 
@@ -20,7 +14,7 @@ const Cards = () => {
             (card, i)=>
             <li  key={i}>
             <figure>
-                <iframe src={card.video} alt={card.title}
+                <iframe title={card.title} src={card.video} alt={card.title}
                 frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"/>
                 <figcaption> 
                 <span>{card.title}</span>
@@ -164,15 +158,5 @@ const Projects = styled(motion.div)`
         }
     }
 `
-
-const Frame1 = styled(motion.div)`
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: 300vh;
-    background: #fffebf;
-    z-index: 2;
-`
-
 
 export default Music;

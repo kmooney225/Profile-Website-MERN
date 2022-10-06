@@ -1,9 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { projectPageAnimation, 
-    frameTrans, 
-} from "../animation"
+import { projectPageAnimation } from "../animation"
 import ScrollTop from "../components/ScrollTop";
 import Particle from "../components/Particle";
 import ProjectElements from "../components/ProjectElements";
@@ -224,15 +222,6 @@ const Projects = styled(motion.div)`
             color: white;
         }
     }
-`
-
-const Frame1 = styled(motion.div)`
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: 300vh;
-    background: #fffebf;
-    z-index: 2;
 `
 
 

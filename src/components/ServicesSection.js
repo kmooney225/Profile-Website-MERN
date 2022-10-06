@@ -1,24 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import {About,Description,Image,Hide} from "../styles";
+import {About} from "../styles";
 
 import { scrollReveal } from "../animation";
 import { useScroll } from "./useScroll";
-import {Cloud, 
-        renderSimpleIcon, 
-        fetchSimpleIcons, 
-        SimpleIcon} from 'react-icon-cloud'
 
 const ServicesSection = () => {
     const [element,controls] = useScroll();
-    const TagCloud = require('TagCloud');
-    const icons = () => {
-        return(
-            <a>cap</a>
-        )
-    }
-      
-      
+
     return(
     <Services variants={scrollReveal} animate={controls} initial="hidden" ref={element}>
 
