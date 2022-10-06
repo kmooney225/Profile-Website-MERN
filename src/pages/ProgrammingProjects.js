@@ -83,6 +83,7 @@ const ProgrammingProjects = () => {
                 <figcaption> 
                 <span>{card.title}</span>
                 <div className="description">{card.description}</div>
+                <a href={card.link}><button>Check it Out!</button></a>
                 </figcaption>
             </figure>
             </li>)}
@@ -136,7 +137,7 @@ const Projects = styled(motion.div)`
     }
 
     label{
-    background: linear-gradient(to bottom right, #fff, #999);
+    background: linear-gradient(to bottom right, #fff, #ccc);
     color: #150000;
     font-weight: 700;
     padding: 8px 10px;
@@ -215,6 +216,14 @@ const Projects = styled(motion.div)`
     margin: 0;
     position: relative;
     }
+    figure button{
+        color: #200000;
+        &:hover{
+            background-color: #950101;
+            color: white;
+        }
+    }
+    
 
 `
 

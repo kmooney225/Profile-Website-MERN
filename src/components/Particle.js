@@ -56,7 +56,7 @@ const Particle = () => {
               color: "#ffffff",
               distance: 50,
               enable: true,
-              opacity: 0.5,
+              opacity: 0.8,
               width: 1,
             },
             collisions: {
@@ -65,7 +65,7 @@ const Particle = () => {
             move: {
               directions: "none",
               enable: true,
-              speed: 0.8,
+              speed: 1,
               outModes: {
                 default: "bounce",
               },
@@ -80,7 +80,7 @@ const Particle = () => {
               value: 80,
             },
             opacity: {
-              value: 0.4,
+              value: 0.6,
             },
             shape: {
                 type: "char",

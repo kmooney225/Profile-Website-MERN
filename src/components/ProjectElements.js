@@ -25,7 +25,7 @@ const ProjectElements = [
         img: require('../image/x-plore.png'),
         description:
           "A React App showing statistics of all countries.",
-        link: "View Project",
+        link: "",
         tag: "Clients' Projects",
       },
     ]
