@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation";
@@ -7,8 +7,23 @@ import proImg from "../image/professional-profile-pic.JPG"
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icons"
+import { useEffect } from "react";
+import { validateEmail, validateName, validateMessage } from "../components/Validation";
+import InLineError from "../components/InLineError";
 
 const ContactMe = () => {
+  const [name,setName] = useState("")
+  const [nameError,setNameError] = useState("")
+  const [email,setEmail] = useState("")
+  const [emailError,setEmailError] = useState("")
+  const [message,setMessage] = useState("")
+  const [messageError,setMessageError] = useState("")
+
+  useEffect(() =>{
+    validateName({name,setNameError})
+    validateEmail({email,setEmailError})
+    validateMessage({message,setMessageError})
+  },[name,email,message])
 
     return (
         <ContactStyle
@@ -62,13 +77,37 @@ const ContactMe = () => {
             <form>
               <h3 className="title">Contact me :)</h3>
               <div className="input-container">
-                <input type="text" placeholder="Name" name="name" className="input" />
+                <input 
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                type="text" 
+                placeholder="Name" 
+                name="name" 
+                className="input" 
+                />
+                {name && <InLineError error={nameError} />}
               </div>
               <div className="input-container">
-                <input type="email" placeholder="Email" name="email" className="input" />
+                <input 
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email" 
+                placeholder="Email" 
+                name="email" 
+                className="input" 
+                />
+                {email && <InLineError error={emailError} />}
               </div>
               <div className="input-container textarea">
-                <textarea name="message" placeholder="How can I help?" className="input"></textarea>
+                <textarea 
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                name="message" 
+                placeholder="How can I help?" 
+                className="input" 
+                /> 
+                {message && <InLineError error={messageError} />}
               </div>
               <input type="submit" value="Send" className="btn" />
             </form>
