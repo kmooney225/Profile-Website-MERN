@@ -9,7 +9,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icons"
 
 const ContactMe = () => {
-    
+
     return (
         <ContactStyle
         exit="exit"
@@ -62,24 +62,13 @@ const ContactMe = () => {
             <form>
               <h3 className="title">Contact me :)</h3>
               <div className="input-container">
-                <input type="text" name="name" className="input" />
-                <label >Username</label>
-                <span>Username</span>
+                <input type="text" placeholder="Name" name="name" className="input" />
               </div>
               <div className="input-container">
-                <input type="email" name="email" className="input" />
-                <label >Email</label>
-                <span>Email</span>
-              </div>
-              <div className="input-container">
-                <input type="tel" name="phone" className="input" />
-                <label >Phone</label>
-                <span>Phone</span>
+                <input type="email" placeholder="Email" name="email" className="input" />
               </div>
               <div className="input-container textarea">
-                <textarea name="message" className="input"></textarea>
-                <label >Message</label>
-                <span>Message</span>
+                <textarea name="message" placeholder="How can I help?" className="input"></textarea>
               </div>
               <input type="submit" value="Send" className="btn" />
             </form>
@@ -165,6 +154,10 @@ const ContactStyle = styled(motion.div)`
     letter-spacing: 0.5px;
     border-radius: 25px;
     transition: 0.3s;
+    ::placeholder { 
+      color: #aaa;
+      opacity: 1;
+    }
     }
 
     textarea.input {
