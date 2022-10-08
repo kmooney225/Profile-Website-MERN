@@ -10,6 +10,10 @@ import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icon
 import { useEffect } from "react";
 import { validateEmail, validateName, validateMessage } from "../components/Validation";
 import InLineError from "../components/InLineError";
+import Loading from '../components/Loading';
+import { toast } from 'react-toastify';
+import Toast from '../components/Toast';
+import { SendEmail } from "../API/mail";
 
 const ContactMe = () => {
   const [name,setName] = useState("")
@@ -18,12 +22,34 @@ const ContactMe = () => {
   const [emailError,setEmailError] = useState("")
   const [message,setMessage] = useState("")
   const [messageError,setMessageError] = useState("")
+  const [buttonLoading, setButtonLoading] = useState(false)
+  const [send, setSend] = useState()
 
   useEffect(() =>{
     validateName({name,setNameError})
     validateEmail({email,setEmailError})
     validateMessage({message,setMessageError})
+
+    if (send) {
+      toast.success(send.msg);
+      setName("")
+      setEmail("")
+      setMessage("")
+      setSend()
+    }
   },[name,email,message])
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setButtonLoading(true);
+    if (!nameError & !emailError & !messageError) {
+      SendEmail({ name, email, message, setSend }).then(
+        () => {
+          setButtonLoading(false);
+        }
+      );
+    }
+  };
 
     return (
         <ContactStyle
@@ -32,6 +58,7 @@ const ContactMe = () => {
         initial="hidden"
         animate="show"
         >
+          <Toast />
         <div className="container">
         
         <img className="square" alt="" />
@@ -74,7 +101,7 @@ const ContactMe = () => {
           </div>
   
           <div className="contact-form">
-            <form>
+            <form onSubmit={submitHandler}>
               <h3 className="title">Contact me :)</h3>
               <div className="input-container">
                 <input 
@@ -109,7 +136,11 @@ const ContactMe = () => {
                 /> 
                 {message && <InLineError error={messageError} />}
               </div>
-              <input type="submit" value="Send" className="btn" />
+              <input 
+              type="submit" 
+              value="Send" 
+              className="btn" 
+              />
             </form>
           </div>
         </div>

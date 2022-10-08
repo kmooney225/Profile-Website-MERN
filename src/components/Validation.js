@@ -7,18 +7,18 @@ const validateEmail = ({ email, setEmailError }) => {
   };
   
   const validateName = ({ name, setNameError }) => {
-    return name && name.length < 5
-      ? setNameError('Full name is too short')
+    return name && name.length < 3
+      ? setNameError('Name cannot be less than 3 characters')
       : name && name.length > 50
-      ? setNameError('Try to make it short and meanful')
+      ? setNameError('Name cannot be more than 50 characters')
       : setNameError('');
   };
   
   const validateMessage = ({ message, setMessageError }) => {
     return message && message.length < 5
-      ? setMessageError('Message is too short')
+      ? setMessageError('Message cannot be less than 5 characters')
       : message && message.length > 200
-      ? setMessageError('Try to make it short and meanful')
+      ? setMessageError('Message cannot be more than 500 characters')
       : setMessageError('');
   };
   

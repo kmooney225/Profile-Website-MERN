@@ -1,62 +1,20 @@
-const express = require("express");
-const app = express();
-const port = 5000;
-
-//env var
-
 require("dotenv").config();
+const app = require("express")();
+app.use(require("express").json());
+app.use(require("cors")({ origin: `${process.env.CLIENT_URL}` }));
+const port = process.env.PORT || 5000;
 
-const bodyParser = require("express").json;
-app.use(bodyParser());
-
-//nodemailer config
-
-const nodemailer = require("nodemailer");
-
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.AUTH_EMAIL,
-        pass: process.env.AUTH_PASS
-    }
-})
-
-//nodemailer test
-transporter.verify((error, success) => {
-    if (error) {
-        console.log(error);
-    } else{
-        console.log("Ready for messages")
-        console.log(success);
-    }
-})
-
-app.post("/sendmail", (req, res) => {
-    const {to, subject, message} = req.body;
-
-    const mailOptions = {
-        from: process.env.AUTH_EMAIL,
-        to: to,
-        subject: subject,
-        text: message
-    }
-
-    transporter
-        .sendMail(mailOptions)
-        .then(() => {
-            //success
-            res.json ({
-                status: "SUCCESS",
-                message: "Message sent successfully."
-            })
-        })
-        .catch((error) => {
-            //error
-            console.log(error)
-            res.json({status: "FAIL", message: "An error occurred!"})
-        })
-})
+// ****** SEND API
+app.post("/send", async (req, res) => {
+  try {
+    const { name,email,message} = req.body
+    require("EmailSender")({name,email,message})
+    res.json({ msg: "Your message sent successfully" });
+  } catch (error) {
+    res.status(404).json({ msg: "Error!" });
+  }
+});
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-})
+  console.log(`http://localhost:${port}`);
+});
