@@ -1,15 +1,15 @@
-# Profile Website (React)
+# Profile Website (MERN stack)
 
 ![profile-website](https://user-images.githubusercontent.com/37048222/188663415-a0c5d645-533b-4158-8597-d9d1619c334e.png)
 
 ## Description
 
-This is a portfolio website I am creating using React.js
+This is a portfolio website I am creating using the MERN stack
 
 ## Goals
 
-- To understanding things in the React Framework (Framer Motion, React Router, Styled Components)
-- To improve my understanding of Frontend Development
+- To understanding things in the React Framework (Framer Motion, React Router, Styled Components, NodeMailer, ect.)
+- To improve my understanding of Fullstack development with a concentration on Frontend
 - To create a more attractive and dynamic portfolio website
 
 ## How To Run
