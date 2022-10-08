@@ -37,7 +37,7 @@ const ContactMe = () => {
       setMessage("")
       setSend()
     }
-  },[name,email,message])
+  },[name,email,message,send])
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -50,6 +50,7 @@ const ContactMe = () => {
       );
     }
   };
+  console.log(send)
 
     return (
         <ContactStyle
@@ -58,9 +59,8 @@ const ContactMe = () => {
         initial="hidden"
         animate="show"
         >
-          <Toast />
+        <div className="toast-container"> <Toast /></div>
         <div className="container">
-        
         <img className="square" alt="" />
         <div className="form">
           <div className="contact-info">
@@ -105,6 +105,7 @@ const ContactMe = () => {
               <h3 className="title">Contact me :)</h3>
               <div className="input-container">
                 <input 
+                required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 type="text" 
@@ -128,6 +129,7 @@ const ContactMe = () => {
               </div>
               <div className="input-container textarea">
                 <textarea 
+                required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 name="message" 
@@ -151,6 +153,11 @@ const ContactMe = () => {
 }
 
 const ContactStyle = styled(motion.div)`
+
+
+    .toast-container{
+      
+    }
     .container {
     z-index: 1;
     position: relative;

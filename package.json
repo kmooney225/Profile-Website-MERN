@@ -40,7 +40,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "nodemon server.js"
+    "server": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -65,5 +65,10 @@
   },
   "engines": {
     "node": "16.15.0"
-  }
+  },
+  "description": "![profile-website](https://user-images.githubusercontent.com/37048222/188663415-a0c5d645-533b-4158-8597-d9d1619c334e.png)",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
