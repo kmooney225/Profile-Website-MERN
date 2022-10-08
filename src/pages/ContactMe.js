@@ -215,7 +215,7 @@ const ContactStyle = styled(motion.div)`
     .input {
     width: 100%;
     outline: none;
-    border: 2px solid #fafafa;
+    border: 2px solid #fff;
     background: none;
     padding: 0.6rem 1.2rem;
     color: #fff;
