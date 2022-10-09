@@ -1,12 +1,9 @@
 import React from "react";
-import * as THREE from 'three';
 import styled from "styled-components";
 import {About} from "../styles";
 
 import { scrollReveal } from "../animation";
 import { useScroll } from "./useScroll";
-
-import {$} from 'jquery'
 
 const ServicesSection = () => {
     const [element,controls] = useScroll();
