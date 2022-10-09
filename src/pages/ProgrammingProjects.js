@@ -124,6 +124,11 @@ const Projects = styled(motion.div)`
     height: 300px;
     background: #faa7b730;
     }
+    .head-text{
+        font-size: 40px;
+        text-align: center;
+        margin: 20px;
+    }
 
     form{
     display: flex;
@@ -194,7 +199,7 @@ const Projects = styled(motion.div)`
 
     img{
     width: 300px;
-    height: 250px;
+    height: 300px;
     left: 0;
     border: solid;
     object-fit: cover;
@@ -209,19 +214,30 @@ const Projects = styled(motion.div)`
     border: #444 solid;
     padding: 30px 0 20px 0;
     animation: show .5s ease-in-out;
+    span{
+        color: #cc7777;
+        font-size: 28px;
+    }
     }
 
     figure figcaption{
-    margin: 0;
+    margin: 10px;
     position: relative;
     }
     figure button{
         color: #200000;
+        margin: 10px;
         &:hover{
             background-color: #950101;
             color: white;
         }
     }
+
+    @media (max-width: 850px){
+        figure{
+            width: 350px;
+        }
+        }
 `
 
 

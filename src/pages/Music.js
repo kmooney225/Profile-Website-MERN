@@ -60,6 +60,12 @@ const Projects = styled(motion.div)`
     background: #faa7b730;
     }
 
+    .head-text{
+        font-size: 40px;
+        text-align: center;
+        margin: 20px;
+    }
+
     form{
     display: flex;
     justify-content: center;
@@ -144,6 +150,10 @@ const Projects = styled(motion.div)`
     border: #444 solid;
     padding: 30px 0 20px 0;
     animation: show .5s ease-in-out;
+    span{
+        color: #cc7777;
+        font-size: 28px;
+    }
     }
 
     figure figcaption{
@@ -152,11 +162,17 @@ const Projects = styled(motion.div)`
     }
     figure button{
         color: #200000;
+        margin: 10px;
         &:hover{
             background-color: #950101;
             color: white;
         }
     }
+    
+    @media (max-width: 850px){
+        figure{
+            width: 350px;
+        }
 `
 
 export default Music;
