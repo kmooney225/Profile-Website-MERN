@@ -38,18 +38,18 @@ const ContactMe = () => {
     }
   },[name,email,message,send])
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    //setButtonLoading(true);
-    if (!nameError & !emailError & !messageError) {
-      SendEmail({ name, email, message, setSend }).then(
-        () => {
-          //setButtonLoading(false);
-        }
-      );
-    }
-  };
-  console.log(send)
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+  //   //setButtonLoading(true);
+  //   if (!nameError & !emailError & !messageError) {
+  //     SendEmail({ name, email, message, setSend }).then(
+  //       () => {
+  //         //setButtonLoading(false);
+  //       }
+  //     );
+  //   }
+  // };
+  // console.log(send)
 
     return (
         <ContactStyle
@@ -100,7 +100,7 @@ const ContactMe = () => {
           </div>
   
           <div className="contact-form">
-            <form onSubmit={submitHandler}>
+            <form>
               <h3 className="title">Contact me :)</h3>
               <div className="input-container">
                 <input 
@@ -139,7 +139,6 @@ const ContactMe = () => {
               </div>
               <input 
               type="submit" 
-              value="Send" 
               className="btn" 
               />
             </form>
