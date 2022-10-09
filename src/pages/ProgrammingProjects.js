@@ -127,7 +127,7 @@ const Projects = styled(motion.div)`
     .head-text{
         font-size: 40px;
         text-align: center;
-        margin: 20px;
+        margin: 30px;
     }
 
     form{
@@ -184,8 +184,8 @@ const Projects = styled(motion.div)`
 
     figure{
     z-index: 1;
-    background-color: #aaa;
-    border: outset;
+    background: #c22;
+    border: outset #fbb;
     border-radius: 20px;
     box-shadow: 0 2px 8px 5px #ffffff25;
     color: #212121;
@@ -211,11 +211,11 @@ const Projects = styled(motion.div)`
     font-size: 18px;
     background: white;
     border-radius: 10px  10px 20px 20px;
-    border: #444 solid;
+    border: #200000 solid;
     padding: 30px 0 20px 0;
     animation: show .5s ease-in-out;
     span{
-        color: #cc7777;
+        color: #200;
         font-size: 28px;
     }
     }
@@ -228,7 +228,7 @@ const Projects = styled(motion.div)`
         color: #200000;
         margin: 10px;
         &:hover{
-            background-color: #950101;
+            background-color: #bb0101;
             color: white;
         }
     }

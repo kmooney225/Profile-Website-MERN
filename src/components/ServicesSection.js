@@ -35,19 +35,12 @@ const ServicesSection = () => {
 }
 
 const Services = styled(About)`
-    h2{
-        padding-bottom: 5rem;
-    }
-    p{
-        width: 70%;
-        padding: 2rem 0rem 4rem 0rem;
-    }
+    text-align: center;
+
     a{
         font-size: 80px;
     }
-    .about-me{
-        left: 100rem;
-    }
+
 `
 
 export default ServicesSection;
