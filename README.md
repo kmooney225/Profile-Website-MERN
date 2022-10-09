@@ -17,7 +17,7 @@ The backend is currently disable.
 
 ## Description
 
-This is a portfolio website I am creating using the MERN stack
+This is a portfolio website I am creating using the MERN stack (Focusing on how to connect React and Node).
 
 ## Goals
 
