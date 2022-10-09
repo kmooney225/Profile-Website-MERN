@@ -99,12 +99,11 @@ const Projects = styled(motion.div)`
 
     figure{
     z-index: 1;
-    background: #c22;
+    background: linear-gradient(to top, #c00, #f55);
     border: outset #fbb;
     border-radius: 20px;
     box-shadow: 0 2px 8px 5px #ffffff25;
     color: #212121;
-    font-style: italic;
     padding: 2px;
     text-align: center;
     width: 400px;

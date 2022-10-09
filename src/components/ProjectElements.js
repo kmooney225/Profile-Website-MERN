@@ -8,6 +8,7 @@ const ProjectElements = [
         description:
           "A modern music player created using React.js.",
         link: "https://cool-mandazi-092c82.netlify.app/",
+        code: "https://github.com/kmooney225/Music-Player",
         tag: "Web Projects",
       },
       {
@@ -17,6 +18,7 @@ const ProjectElements = [
         description:
           "A C# game recreating a 3d version of Tetris. Made in Unity.",
         link: "https://simmer.io/@kmoney225/3d-tetromino",
+        code: "https://github.com/kmooney225/Tetromino3D",
         tag: "Extraneous Projects",
       },
       {
@@ -25,7 +27,8 @@ const ProjectElements = [
         img: require('../image/x-plore.png'),
         description:
           "A React App showing statistics of all countries.",
-        link: "",
+        link: "https://explore-1qqiieq1g-kmooney225.vercel.app/",
+        code: "https://github.com/kmooney225/explore-x",
         tag: "Web Projects",
       },
     ]

@@ -6,7 +6,7 @@ export const About = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 15rem;
+    padding: 1rem 15rem;
     color: white;
     @media (max-width: 850px){
             display: block;
@@ -34,7 +34,12 @@ export const Image = styled.div`
     width: 100%;
     height: 80vh;
     margin-right: auto;
+    padding-top: 5rem;
     object-fit: cover;
+    @media (min-width: 950px){
+        align-items: center;
+        display: flex;
+        }
 `;
 
 
