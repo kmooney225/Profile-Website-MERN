@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
     background: #fff; 
     }
     button{
+        z-index: 3;
         font-weight: bold;
         font-size: 1.1rem;
         cursor: pointer;
