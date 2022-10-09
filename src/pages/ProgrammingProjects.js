@@ -209,7 +209,7 @@ const Projects = styled(motion.div)`
 
     figcaption{
     font-size: 18px;
-    background: white;
+    background: linear-gradient(to top left, #ccc, #fff);
     border-radius: 10px  10px 20px 20px;
     border: #200000 solid;
     padding: 30px 0 20px 0;
