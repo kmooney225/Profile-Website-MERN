@@ -12,7 +12,7 @@ import { validateEmail, validateName, validateMessage } from "../components/Vali
 import InLineError from "../components/InLineError";
 import { toast } from 'react-toastify';
 import Toast from '../components/Toast';
-import { SendEmail } from "../API/mail";
+//import { SendEmail } from "../API/mail";
 
 const ContactMe = () => {
   const [name,setName] = useState("")
