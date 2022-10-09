@@ -18,15 +18,19 @@ const ServicesSection = () => {
                 and learning from all sorts of experiences, being it an building a 3d
                 Tetris web game or playing saxophone at the Hard Rock Cafe monthly.
                 <br /><br />
-                I am currently based in Denver, Colorado. I work for a software API company,
-                but I like to do freelance projects on my free time. I also playing at different
-                restaurants and different private events like parties and weddings on
-                the weekend. 
+                I'm currently based in Denver, Colorado. I work for a software API company,
+                but I like to do freelance web projects on my free time. I'm passionate about 
+                learning more about javascript frameworks as I spend a fair bit of my personal 
+                and freelance time using React.js and Python Flask. I also aspire to learn more 
+                about the .NET world with C# as I am learning more about 3D development.
+                the weekends. 
                 <br /><br />
-                I am passionately about learning more about javascript and python 
-                frameworks as I spend a fair bit of my personal and freelance time
-                using React.js and Python Flask. I also aspire to learn more about the 
-                .NET world with C# as I am learning more about 3D development.
+                I spend many of my weekends and evenings playing music for different restaurants 
+                and privates event, like weddings and parties. I love playing R&B and jazz, but
+                I play an assortment of different music genres and learn almost anything if it calls
+                for it. And if I have free nothing else, you may pass by me while doing street
+                perfomance, whether that be in the middle of downtown, or whenever I decide to
+                travel to a different city or country with my saxophone and bluetooth speaker.
                 <br />
             </p>
         </div>
