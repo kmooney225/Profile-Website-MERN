@@ -10,7 +10,6 @@ import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icon
 import { useEffect } from "react";
 import { validateEmail, validateName, validateMessage } from "../components/Validation";
 import InLineError from "../components/InLineError";
-import Loading from '../components/Loading';
 import { toast } from 'react-toastify';
 import Toast from '../components/Toast';
 import { SendEmail } from "../API/mail";
@@ -22,7 +21,7 @@ const ContactMe = () => {
   const [emailError,setEmailError] = useState("")
   const [message,setMessage] = useState("")
   const [messageError,setMessageError] = useState("")
-  const [buttonLoading, setButtonLoading] = useState(false)
+  //const [buttonLoading, setButtonLoading] = useState(false)
   const [send, setSend] = useState()
 
   useEffect(() =>{
@@ -41,11 +40,11 @@ const ContactMe = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setButtonLoading(true);
+    //setButtonLoading(true);
     if (!nameError & !emailError & !messageError) {
       SendEmail({ name, email, message, setSend }).then(
         () => {
-          setButtonLoading(false);
+          //setButtonLoading(false);
         }
       );
     }
