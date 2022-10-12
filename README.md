@@ -17,7 +17,9 @@ The backend is currently disable.
 
 ## Description
 
-This is a portfolio website I am creating using the MERN stack (Focusing on how to connect React and Node).
+This is a portfolio website I am creating using the MERN stack (Focusing on how to connect React and Node). It is a 
+4-page website with an About section, Portfolio sections (For Music and Programming), and a contact form using node
+to recieve responses.
 
 ## Goals
 
@@ -25,15 +27,8 @@ This is a portfolio website I am creating using the MERN stack (Focusing on how 
 - To improve my understanding of Fullstack development with a concentration on Frontend
 - To create a more attractive and dynamic portfolio website
 
-## How To Run
+## How To Run Localy
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can run npm start once you navigate to this directory. You can view the local changes and 
+updates from http://localhost:3000
 
