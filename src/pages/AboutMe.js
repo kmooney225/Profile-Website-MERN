@@ -15,7 +15,6 @@ const AboutMe = () => {
         animate="show"
         >
             <AboutSection/>
-            <StackSection/>
             <ServicesSection/>
             <ScrollTop />
         </motion.div>

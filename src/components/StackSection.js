@@ -65,12 +65,12 @@ const StackSection = () => {
             onMouseOut={hideText}
             />
         <img src={require("../image/full-moon-unactive.png")} 
-        alt=""  
-        onmouseover={displayTextTools}
+            alt=""  
+            onmouseover={displayTextTools}
         />
         <img src={require("../image/back-moon-unactive.png")} 
-        alt=""  
-        onmouseover={displayTextBackend}
+            alt=""  
+            onmouseover={displayTextBackend}
         />
 
         <h3>
