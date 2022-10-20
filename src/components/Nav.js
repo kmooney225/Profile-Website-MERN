@@ -2,15 +2,14 @@ import {useState} from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
-import {useLocation} from "react-router-dom";
-
 
 const Nav = () => {
-    const {pathname} = useLocation();
     const [isNavExpanded, setIsNavExpanded] = useState(false)
 
     const clickHandler = () =>{
-        return setIsNavExpanded(false)
+        if (window.innerWidth <= 768) {
+            return setIsNavExpanded(false)
+        }
     }
     return(
         <StyledNav>
@@ -19,7 +18,10 @@ const Nav = () => {
                     Kevin
                 </Link>
             </h1>
-            <ul style={ isNavExpanded ? { display:'block'} : {display : 'none'}}>
+            <ul style={ isNavExpanded && window.innerWidth <=768 ? { display:'block'} : 
+                    window.innerWidth >=768 ? {display : 'flex'} : 
+                    {display : 'none'}}
+                    >
                 <li onClick={() => clickHandler()}>
                     <Link to="/">About Me</Link>
                 </li>
@@ -38,7 +40,6 @@ const Nav = () => {
             onClick={() => {
             setIsNavExpanded(!isNavExpanded);
             }}>
-                {/* icon from heroicons.com */}
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -56,7 +57,7 @@ const Nav = () => {
     )
 }
 
-const StyledNav = styled.nav`
+const StyledNav = styled(motion.nav)`
     min-height: 10vh;
     display: flex;
     margin: auto;
@@ -67,6 +68,24 @@ const StyledNav = styled.nav`
     position: sticky;
     top: 0;
     z-index: 10;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    ul{
+        display: flex;
+        list-style: none;
+    }
+    #logo {
+        font-size: 1.5rem;
+        font-family: 'Lobster', cursive;
+        font-weight: lighter;
+    }
+    li{
+        padding-left: 10rem;
+        position: relative;
+    }
+
     .hamburger {
         // removes default border on button element
         border: 0;
@@ -87,23 +106,7 @@ const StyledNav = styled.nav`
         .hamburger:hover {
         background-color: #ff0000;
         }
-    a{
-        color: white;
-        text-decoration: none;
-    }
-    ul{
-        display: flex;
-        list-style: none;
-    }
-    #logo {
-        font-size: 1.5rem;
-        font-family: 'Lobster', cursive;
-        font-weight: lighter;
-    }
-    li{
-        padding-left: 10rem;
-        position: relative;
-    }
+
     @media (max-width: 1300px){
             flex-direction: column;
             padding: 1rem;
@@ -131,48 +134,20 @@ const StyledNav = styled.nav`
         }
 
         ul {
-            // navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar)
             position: absolute;
             top: 60px;
             left: 0;
-            // stacks the li tags vertically 
-            flex-direction: column;
-        // makes menu span full height and width
-            width: 100%;
             height: calc(100vh - 50px);
             background-color: #990000;
-            border-top: 1px solid black;
-            
-            padding-top: 10px;
         }
         li {
-            // centers link text and strips off margin
             text-align: center;
-            margin: 0;
-            padding-top: 20px;
-            display: block;
-        }
-        li a {
-            color: white;
-            font-size: 30px;
-            // increases the surface area of the anchor tag to span the full width of the menu
-            width: 100%;
-            padding: 1.5rem 0;
+            padding: 2rem 0;
         }
         li:hover {
-            background-color: #eee;
+            background-color: #400000;
         }
     }
 `;
-
-const Line = styled(motion.div)`
-    height: 0.3rem;
-    background: #ff0000;
-    position: absolute;
-    bottom: -50%;
-    @media (max-width: 1300px){
-            left: 0%;
-        }
-`
 
 export default Nav;
