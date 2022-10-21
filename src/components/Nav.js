@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect } from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
@@ -11,6 +11,18 @@ const Nav = () => {
             return setIsNavExpanded(false)
         }
     }
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        function handleResize() {
+        setWindowWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    
     return(
         <StyledNav>
             <h1>
@@ -18,8 +30,8 @@ const Nav = () => {
                     Kevin
                 </Link>
             </h1>
-            <ul style={ isNavExpanded && window.innerWidth <=768 ? { display:'block'} : 
-                    window.innerWidth >=768 ? {display : 'flex'} : 
+            <ul style={ isNavExpanded && windowWidth <=768 ? { display:'block'} : 
+                    windowWidth >=768 ? {display : 'flex'} : 
                     {display : 'none'}}
                     >
                 <li onClick={() => clickHandler()}>
