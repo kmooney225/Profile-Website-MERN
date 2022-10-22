@@ -99,7 +99,6 @@ const StyledNav = styled(motion.nav)`
     }
 
     .hamburger {
-        // removes default border on button element
         border: 0;
         height: 40px;
         width: 40px;
@@ -108,7 +107,6 @@ const StyledNav = styled(motion.nav)`
         background-color: #cc0000;
         cursor: pointer;
         transition: background-color 0.2s ease-in-out;
-        // positions the icon to the right and center aligns it vertically
         position: relative;
         top: 0%;
         left: 40%;
