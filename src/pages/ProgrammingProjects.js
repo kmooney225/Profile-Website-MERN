@@ -89,9 +89,9 @@ const ProgrammingProjects = () => {
                     <h1 className="h1 text-center" id="pageHeaderTitle">{card.title}</h1>
 
                     <article className="postcard dark red">
-                        <a className="postcard__img_link" href="#">
-                            <img className="postcard__img" src={card.img} alt="Image Title" />
-                        </a>
+                        <p className="postcard__img_link" href="#">
+                            <img className="postcard__img" src={card.img} alt="" />
+                        </p>
                         <div className="postcard__text">
                             <h1 className="postcard__title red">{card.title}</h1>
                             <div className="postcard__bar"></div>
@@ -216,6 +216,9 @@ const Projects = styled(motion.div)`
         color: inherit;
         text-decoration: none;
     }
+    .postcard__title {
+      font-size: 20px;
+    }
 
     .postcard__img {
         max-height: 400px;
@@ -245,7 +248,7 @@ const Projects = styled(motion.div)`
     .postcard__preview-txt {
         overflow: hidden;
         text-overflow: ellipsis;
-        text-align: justify;
+        margin: 0;
         font-size: 16px;
         height: 100%;
     }
