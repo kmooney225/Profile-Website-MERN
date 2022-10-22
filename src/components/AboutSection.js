@@ -3,7 +3,7 @@ import saxophonePic from "../image/treble-note.jpg";
 import ParticleImage, {
     forces,
   } from "react-particle-image";
-//import styled from "styled-components";
+import {Link} from "react-router-dom";
 import {About, Description, Image, Hide} from "../styles";
 import Wave from "./Wave";
 import { motion } from "framer-motion";
@@ -41,7 +41,7 @@ const AboutSection = () => {
                 I'm also a talented musician with 15 years of experiences playing
                 saxophone for various venues.
                 </motion.p>
-                <motion.button variants={fade}>Contact Me</motion.button>
+                <Link to="/ContactMe"><motion.button variants={fade}>Contact Me</motion.button></Link>
             </Description>
             <Image>
             <motion.div variants={photoAnim}>
