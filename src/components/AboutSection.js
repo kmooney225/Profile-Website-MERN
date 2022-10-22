@@ -35,8 +35,8 @@ const AboutSection = () => {
                         </motion.h2>
                     </Hide>
                 </motion.div>
-                <motion.p variants={fade}>I'm a web developer who aspires to
-                work on front-end technologies.
+                <motion.p variants={fade}>I'm a web developer who spends most of his focus
+                working on front-end technologies.
                 <br /><br />
                 I'm also a talented musician with 15 years of experiences playing
                 saxophone for various venues.
