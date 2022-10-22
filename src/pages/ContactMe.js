@@ -49,7 +49,6 @@ const ContactMe = () => {
       );
     }
   };
-  console.log(send)
 
     return (
         <ContactStyle
