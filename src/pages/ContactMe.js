@@ -12,7 +12,7 @@ import { validateEmail, validateName, validateMessage } from "../components/Vali
 import InLineError from "../components/InLineError";
 import { toast } from 'react-toastify';
 import Toast from '../components/Toast';
-//import { SendEmail } from "../API/mail";
+import { SendEmail } from "../API/mail";
 
 const ContactMe = () => {
   const [name,setName] = useState("")
@@ -38,18 +38,18 @@ const ContactMe = () => {
     }
   },[name,email,message,send])
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   //setButtonLoading(true);
-  //   if (!nameError & !emailError & !messageError) {
-  //     SendEmail({ name, email, message, setSend }).then(
-  //       () => {
-  //         //setButtonLoading(false);
-  //       }
-  //     );
-  //   }
-  // };
-  // console.log(send)
+  const submitHandler = (e) => {
+    e.preventDefault();
+    //setButtonLoading(true);
+    if (!nameError & !emailError & !messageError) {
+      SendEmail({ name, email, message, setSend }).then(
+        () => {
+          //setButtonLoading(false);
+        }
+      );
+    }
+  };
+  console.log(send)
 
     return (
         <ContactStyle
@@ -61,7 +61,7 @@ const ContactMe = () => {
         <div className="toast-container"> <Toast /></div>
         <div className="container">
         <img className="square" alt="" />
-        <div className="form">
+        <div className="form" onSubmit={submitHandler}>
           <div className="contact-info">
             <h3 className="title">Let's get in touch</h3>
             <p className="text">
