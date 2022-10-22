@@ -8,7 +8,7 @@ export const SendEmail = async ({
   }) => {
     try {
       const datas = { name, email, message };
-      let res = await axios.post(`http://localhost:5000`, datas);
+      let res = await axios.post(`https://kev-portfolio-website.herokuapp.com/`, datas);
       if (res) {
         setSend(res.data);
       }

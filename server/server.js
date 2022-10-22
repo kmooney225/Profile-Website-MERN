@@ -2,7 +2,7 @@ require("dotenv").config();
 const app = require("express")();
 app.use(require("express").json());
 app.use(require("cors")({ origin: `${process.env.CLIENT_URL}` }));
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 5000;
 
 const nodemailer = require("nodemailer")
 
