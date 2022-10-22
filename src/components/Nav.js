@@ -119,7 +119,7 @@ const StyledNav = styled(motion.nav)`
         background-color: #ff0000;
         }
 
-    @media (max-width: 1300px){
+    @media  screen and (max-width: 1300px){
             flex-direction: column;
             padding: 1rem;
             #Logo {
@@ -136,7 +136,7 @@ const StyledNav = styled(motion.nav)`
             }
         }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 765px) {
         .hamburger {
             display: block;
         }

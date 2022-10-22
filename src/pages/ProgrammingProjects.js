@@ -76,14 +76,38 @@ const ProgrammingProjects = () => {
         {cardArray.map(
             (card, i)=>
             <li  key={i}>
-            <figure>
+            {/* <figure>
                 <img src={card.img} alt={card.title}/>
                 <figcaption> 
                 <span>{card.title}</span>
                 <div className="description">{card.description}</div>
                 <a href={card.link}><button>Check it Out!</button></a>
                 </figcaption>
-            </figure>
+            </figure> */}
+            <section className="dark"> 
+                <div className="container py-4">
+                    <h1 className="h1 text-center" id="pageHeaderTitle">{card.title}</h1>
+
+                    <article className="postcard dark red">
+                        <a className="postcard__img_link" href="#">
+                            <img className="postcard__img" src={card.img} alt="Image Title" />
+                        </a>
+                        <div className="postcard__text">
+                            <h1 className="postcard__title red">{card.title}</h1>
+                            <div className="postcard__bar"></div>
+                            <div className="postcard__preview-txt">{card.description}</div>
+                            <ul className="postcard__tagbox">
+                                <li className="tag__item play red">
+                                    <a href={card.link}><i className="fas fa-play mr-2"></i>View Project</a>
+                                </li>
+                                <li className="tag__item play red">
+                                    <a href={card.code}><i className="fas fa-play mr-2"></i>View code</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
             </li>)}
         </ul>
         )}
@@ -122,7 +146,8 @@ const Projects = styled(motion.div)`
     right: -120px;
     width: 300px;
     height: 300px;
-    background: #faa7b730;
+    text-rendering: optimizeLegibility;
+	font-weight: initial;
     }
     .head-text{
         font-size: 40px;
@@ -141,7 +166,7 @@ const Projects = styled(motion.div)`
     }
 
     label{
-    background: linear-gradient(to bottom right, #fff, #ccc);
+    background: #fff;
     color: #150000;
     font-weight: 700;
     padding: 8px 10px;
@@ -173,70 +198,171 @@ const Projects = styled(motion.div)`
     margin: 10px 10px;
     }
 
-    @keyframes show {
-    0% {
-        opacity: 0;
-     }
-    100% {
-        opacity: 1;
-        }
+    .postcard {
+        flex-wrap: wrap;
+        display: flex;
+        background: linear-gradient(to bottom right, #202030, #300000);
+        
+        box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+        border-radius: 10px;
+        margin: 0 0 2rem 0;
+        overflow: hidden;
+        position: relative;
+        color: #ffffff;
+        width: 400px;
+        flex-direction: row-reverse;
+        
+    a {
+        color: inherit;
+        text-decoration: none;
     }
 
-    figure{
-    z-index: 1;
-    background: linear-gradient(to top, #c00, #f55);
-    border: outset #fbb;
-    border-radius: 20px;
-    box-shadow: 0 2px 8px 5px #ffffff25;
-    color: #212121;
-    padding: 2px;
-    text-align: center;
-    width: 400px;
-    overflow: hidden;
-    animation: show .5s ease-in-out;
+    .postcard__img {
+        max-height: 400px;
+        width: 100%;
+        object-fit: cover;
+        position: relative;
     }
 
-    img{
-    width: 300px;
-    height: 300px;
-    left: 0;
-    border: solid;
-    object-fit: cover;
-    border-radius: 20px;
-    animation: show .5s ease-in-out;
+    .postcard__img_link {
+        display: contents;
     }
 
-    figcaption{
-    font-size: 18px;
-    background: linear-gradient(to top left, #ddd, #fff);
-    border-radius: 10px  10px 20px 20px;
-    border: #200000 solid;
-    padding: 30px 0 20px 0;
-    animation: show .5s ease-in-out;
-    span{
-        color: #200;
-        font-size: 28px;
-    }
+    .postcard__bar {
+        width: 50px;
+        height: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
     }
 
-    figure figcaption{
-    margin: 10px;
-    position: relative;
-    }
-    figure button{
-        color: #200000;
-        margin: 10px;
-        &:hover{
-            background-color: #bb0101;
-            color: white;
-        }
+    .postcard__text {
+        padding: 1.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
     }
 
-    @media (max-width: 850px){
-        figure{
-            width: 350px;
-        }
-        }
+    .postcard__preview-txt {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: justify;
+        font-size: 16px;
+        height: 100%;
+    }
+
+    .postcard__tagbox {
+        display: flex;
+        flex-flow: row wrap;
+        font-size: 14px;
+        margin: 20px 0 0 0;
+        padding: 0;
+        justify-content: center;
+        
+
+    .tag__item {
+      display: inline-block;
+      background: transparent;
+      border: solid #bd150b;
+      border-radius: 10px;
+      padding: 3px 10px;
+      margin: 0 5px 5px 0;
+      cursor: default;
+      user-select: none;
+    }
+  }
+}
+
+.postcard .postcard__tagbox .red.play:hover {
+	background: #bd150b;
+}
+
+@media screen and (min-width: 765px) {
+  .postcard {
+    flex-wrap: inherit;
+    width: 750px;
+
+    .postcard__title {
+      font-size: 26px;
+    }
+
+    .postcard__tagbox {
+      justify-content: start;
+    }
+
+    .postcard__img {
+      width: 300px;
+      max-height: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .postcard__text {
+      padding: 3rem;
+      width: 100%;
+    }
+
+    .media.postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      background: #18151f;
+      top: -20%;
+      height: 130%;
+      width: 55px;
+    }
+
+    &:nth-child(2n+1) {
+      flex-direction: row;
+    }
+
+    &:nth-child(2n+0) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-child(2n+1) .postcard__text::before {
+      left: -12px !important;
+      transform: rotate(4deg);
+    }
+
+    &:nth-child(2n+0) .postcard__text::before {
+      right: -12px !important;
+      transform: rotate(-4deg);
+    }
+  }
+}
+
+@media screen and (min-width: 1024px){
+    .postcard{
+        width: 950px;
+    }
+		.postcard__text {
+      padding: 2rem 3.5rem;
+    }
+	
+  .postcard.dark {
+		.postcard__text:before {
+			background: #18151f;
+		}
+  }
+}
+
+.red .postcard__bar {
+	background-color: #bd150b;
+}
+.red::before {
+	background-image: linear-gradient(-30deg, rgba(189, 21, 11, 0.1));
+}
+.red:nth-child(2n)::before {
+	background-image: linear-gradient(30deg, rgba(189, 21, 11, 0.1));
+}
+
+@media screen and (min-width: 769px) {
+    .red::before {
+		background-image: linear-gradient(-80deg, rgba(189, 21, 11, 0.1));
+	}
+	.red:nth-child(2n)::before {
+		background-image: linear-gradient(80deg, rgba(189, 21, 11, 0.1));
+	}
+}
 `
 
 
