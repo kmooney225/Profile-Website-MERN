@@ -8,6 +8,13 @@ import ProjectElements from "../components/ProjectElements";
 import "react-vertical-timeline-component/style.min.css"
 
 const ProgrammingProjects = () => {
+
+    async function Api () {
+        let url = await fetch('https://restcountries.com/v3.1/name/japan')
+        let data = await url.json()
+      
+        return data[0].cca2
+      }
  
     const [filters, setFilters] = useState([
         {id: 0, name:"Web Projects", isSet: false},
