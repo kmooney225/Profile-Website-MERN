@@ -5,16 +5,6 @@
 
 ![portfolio-website2](https://user-images.githubusercontent.com/37048222/194772938-c597720b-7156-4974-ae01-4b249d8cc811.png)
 
-
-## Final Result
-
-The current front of the website can be viewed on the following link:
-
-- https://master--wonderful-druid-0eacaf.netlify.app/
-
-The backend is currently disable.
-
-
 ## Description
 
 This is a portfolio website I am creating using the MERN stack (Focusing on how to connect React and Node). It is a 
